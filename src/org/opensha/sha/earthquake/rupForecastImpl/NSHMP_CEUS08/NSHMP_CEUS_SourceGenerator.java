@@ -34,9 +34,11 @@ import org.opensha.sha.magdist.SummedMagFreqDist;
  */
 public class NSHMP_CEUS_SourceGenerator extends GriddedRegion {
 
-	private final static WC1994_MagLengthRelationship magLenRel = new WC1994_MagLengthRelationship();
+	private final static WC1994_MagLengthRelationship magLenRel = 
+	                        new WC1994_MagLengthRelationship();
 
-	private final static String PATH = "org"+File.separator+"opensha"+File.separator+"sha"+File.separator+"earthquake"+File.separator+"rupForecastImpl"+File.separator+"NSHMP_CEUS08"+File.separator+"inputFiles"+File.separator;
+	private final static String PATH = "resources"+File.separator
+	            +"data"+File.separator+"NSHMP_CEUS08"+File.separator;
 	
 	private double MIN_MAG = 5.0, DELTA_MAG = 0.1, MAX_MAG_DEFAULT = 7, DEFAULT_B_VALUE=0.95;
 	// broad CEUS a-value files

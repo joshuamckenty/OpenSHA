@@ -1701,19 +1701,19 @@ public class General_EQSIM_Tools {
 		String fullPath = "org/opensha/sha/simulators/eqsim_v04/WardsInputFile/test.txt";
 		// I had to rename the file "NCAL(9/1/10)-elements.dat.txt" to test.txt to get this to work
 		General_EQSIM_Tools test = new General_EQSIM_Tools(fullPath, 1);
-		test.read_EQSIMv04_EventsFile("org/opensha/sha/simulators/eqsim_v04/ExamplesFromKeith/NCAL_Ward.out.txt");
+		test.read_EQSIMv04_EventsFile("resources/data/ExamplesFromKeith/NCAL_Ward.out.txt");
 		test.checkEventMagnitudes();
 		test.checkElementSlipRates("testSlipRateFileForWard");
 		test.testTimePredictability(6.5, "testTimePredFileForWard_M6pt5");
 		 */
 		
 		// this is for analysis of the RQSim Results:
-		String fullPath = "org/opensha/sha/simulators/eqsim_v04/ExamplesFromKeith/NCA_Ward_Geometry.dat.txt";
+		String fullPath = "resources/data/ExamplesFromKeith/NCA_Ward_Geometry.dat.txt";
 		General_EQSIM_Tools test = new General_EQSIM_Tools(fullPath);
 		ArrayList<String> sectNames = test.getSectionsNameList();
 //		System.out.println("Section Names (IDs)");
 //		for(int s=0; s<sectNames.size();s++)	System.out.println("\t"+sectNames.get(s)+"("+(s+1)+")");
-		test.read_EQSIMv04_EventsFile("org/opensha/sha/simulators/eqsim_v04/ExamplesFromKeith/eqs.NCA_RSQSim.barall.txt");
+		test.read_EQSIMv04_EventsFile("resources/data/ExamplesFromKeith/eqs.NCA_RSQSim.barall.txt");
 //		test.checkEventMagnitudes();
 //		test.checkElementSlipRates("testSlipRateFileForEQSim", true);
 		System.out.println("Simulation Duration is "+(float)test.getSimulationDurationInYears()+" years");
@@ -1773,12 +1773,12 @@ public class General_EQSIM_Tools {
 		
 		/*
 		// THE FOLLOWING TEST LOOKS GOOD FROM A VISUAL INSPECTION
-		String fullPath = "org/opensha/sha/simulators/eqsim_v04/ExamplesFromKeith/NCA_Ward_Geometry.dat.txt";
+		String fullPath = "resources/data/ExamplesFromKeith/NCA_Ward_Geometry.dat.txt";
 //		String fullPath = "org/opensha/sha/simulators/eqsim_v04/ALLCAL_Model_v04/ALLCAL_Ward_Geometry.dat";
 		General_EQSIM_Tools test = new General_EQSIM_Tools(fullPath);
-		test.read_EQSIMv04_EventsFile("org/opensha/sha/simulators/eqsim_v04/ExamplesFromKeith/NCAL_Ward.out.txt");
-//		test.read_EQSIMv04_EventsFile("org/opensha/sha/simulators/eqsim_v04/ExamplesFromKeith/VC_norcal.d.txt");
-//		test.read_EQSIMv04_EventsFile("org/opensha/sha/simulators/eqsim_v04/ExamplesFromKeith/eqs.NCA_RSQSim.barall.txt");
+		test.read_EQSIMv04_EventsFile("resources/data/ExamplesFromKeith/NCAL_Ward.out.txt");
+//		test.read_EQSIMv04_EventsFile("resources/data/ExamplesFromKeith/VC_norcal.d.txt");
+//		test.read_EQSIMv04_EventsFile("resources/data/ExamplesFromKeith/eqs.NCA_RSQSim.barall.txt");
 
 
 		System.out.println(test.getNumEventsWithElementSlipData()+" out of "+test.getEventsList().size()+" have slip on elements data");

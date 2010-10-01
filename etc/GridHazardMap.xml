@@ -149,7 +149,7 @@
 				<include name="WG02/singleIterationWithModes.OpenSHA.30yr.txt"/>
 				<include name="WGCEP_UCERF1/**"/>
 				<include name="YuccaMountain/**"/>
-				<include name="NSHMP_CEUS08/inputFiles/*.txt"/>
+				<!-- <include name="NSHMP_CEUS08/inputFiles/*.txt"/> -->
 			</fileset>
 		</copy>
 

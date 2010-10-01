@@ -258,11 +258,11 @@
 	<target name="resource.erfs.aux">
 		<!-- This is for ERFs that we won't include in our regular apps because they require
 		too much data, but may be useful to someone. -->
-		<copy todir="${build}/org/opensha/sha/earthquake/rupForecastImpl/NSHMP_CEUS08/" overwrite="true">
+		<!-- <copy todir="${build}/org/opensha/sha/earthquake/rupForecastImpl/NSHMP_CEUS08/" overwrite="true">
 			<fileset dir="${src}/org/opensha/sha/earthquake/rupForecastImpl/NSHMP_CEUS08/">
 				<include name="inputFiles/*.txt" />
 			</fileset>
-		</copy>
+		</copy> -->
 	</target>
 
 	<target name="resource.imrs">
@@ -290,8 +290,12 @@
 			<fileset dir="${src}/resources/help" />
 		</copy>
 
-		<copy todir="${build}/resources/data/region" overwrite="true">
+		<!-- <copy todir="${build}/resources/data/region" overwrite="true">
 			<fileset dir="${src}/resources/data/region" />
+		</copy> -->
+		
+		<copy todir="${build}/resources/data" overwrite="true">
+			<fileset dir="${src}/resources/data" />
 		</copy>
 
 		<copy todir="${build}/org/opensha/refFaultParamDb/dao/db/" overwrite="true">
