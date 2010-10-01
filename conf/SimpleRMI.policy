@@ -1,0 +1,6 @@
+grant {
+	// allows anyone to listen on un-privileged ports
+//	permission java.net.SocketPermission "*:40000-50000", "listen,accept,connect";
+	permission java.net.SocketPermission "*:40000-40500", "listen,accept,connect";
+};
+

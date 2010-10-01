@@ -1,0 +1,117 @@
+
+X-Axis: PGA (g)
+Y-Axis: Probability of Exceedance
+Number of Data Sets: 3
+
+
+DATASET #1
+
+Name: 
+Num Points: 19
+Info: 
+IMR Param List:
+---------------
+IMR = Boore, Joyner & Fumal (1997); Gaussian Truncation = 1 Sided; Truncation Level = 3.0; Component = Random Horizontal; Std Dev Type = Total
+
+Site Param List: 
+----------------
+Longitude = -118.2; Latitude = 34.1; Vs30 = 760.0
+
+IMT Param List: 
+---------------
+IMT = PGA
+
+Forecast Param List: 
+--------------------
+Eqk Rup Forecast = USGS/CGS 2002 Adj. Cal. ERF; Fault Model = Frankel's; Rupture Offset = 1.0; Background Seismicity = Include; Treat Background Seismicity As = Finite Sources
+
+TimeSpan Param List: 
+--------------------
+Duration = 50.0
+
+Max. Source-Site Distance = 200.0
+
+X, Y Data:
+0.0050	1.0
+0.0070	1.0
+0.0098	1.0
+0.0137	1.0
+0.0192	1.0
+0.0269	0.99999994
+0.0376	0.99997234
+0.0527	0.9982778
+0.0738	0.97528964
+0.103	0.8736642
+0.145	0.6633493
+0.203	0.4274945
+0.284	0.23988445
+0.397	0.11499378
+0.556	0.044241503
+0.778	0.012964306
+1.09	0.0025273878
+1.52	2.4989186E-4
+2.13	1.2205542E-5
+
+
+
+DATASET #2
+
+Name: (manually entered XY data)
+Num Points: 19
+Info: PGA values for SRL Paper(Vol 76,Number 5, 
+Sept/Oct 2005) , "Hazard Map Calculation 
+using Grid Computing Fig -2(A),data 
+from  Frankel's Original code
+
+X, Y Data:
+0.0050	1.0
+0.0070	1.0
+0.0098	1.0
+0.0137	1.0
+0.0192	1.0
+0.0269	0.99999994
+0.0376	0.99997187
+0.0527	0.9982483
+0.0738	0.97489506
+0.103	0.8719616
+0.145	0.66020405
+0.203	0.42474967
+0.284	0.23884366
+0.397	0.115170226
+0.556	0.044667516
+0.778	0.013199512
+1.09	0.0025974358
+1.52	2.5795973E-4
+2.13	1.21998755E-5
+
+
+
+DATASET #3
+
+Name: (manually entered XY data)
+Num Points: 19
+Info:  PGA values from IM_EventSet Calculations 
+for BJF-1997 for Site 34.1,-118.2
+
+X, Y Data:
+0.0050	1.0
+0.0070	1.0
+0.0098	1.0
+0.0137	1.0
+0.0192	1.0
+0.0269	0.99999994
+0.0376	0.99997234
+0.0527	0.9982788
+0.0738	0.97526544
+0.103	0.87324876
+0.145	0.6620431
+0.203	0.42610708
+0.284	0.23936015
+0.397	0.11510842
+0.556	0.04444763
+0.778	0.013065836
+1.09	0.0025496772
+1.52	2.5105602E-4
+2.13	1.2205941E-5
+
+

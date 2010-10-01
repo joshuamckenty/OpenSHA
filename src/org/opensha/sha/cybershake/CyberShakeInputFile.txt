@@ -1,0 +1,36 @@
+# This is an input file for the ObsExceedProbCalculator java program
+#
+# all lines that start with "#" are ignored (can be removed); the  
+# order of the other lines is important!
+#
+# Define Location (USC)
+# Lat  Lon  
+34.019200  -118.28600
+#
+# Define earthquake rupture parameters as
+# SourceIndex RuptureIndex 
+# (we can add other info such as ERF and parameters later,
+# currently we can assume to Franekl-2002 with the parameter settings
+# being the one used in Cybershake to generate the rupture list.
+127 6 
+#
+#
+# Choose an INTENSITY_MEASURE TYPE ("PGA", "PGV", "SA", and "MMI"
+# are currently supported).  If "SA" is chosen give the period as 
+# well (e.g., "SA 1.0") the code will throw and exception (show 
+# an error message" if the chosen intensity-measure type is not 
+# supported by the chosen attenuation relationship (the html
+# documentation for each above gives those that are supported)
+SA 3.0
+# 
+# The DEFAULT SITE TYPE that will be used anywhere outside
+# of California (site-specific values converted  from the 
+# Wills et al. (2000) classification are used in California).
+B
+#
+#
+#Cybershake SA values in units of cm/s*s
+# component 1
+77.53 25.24 85.09 32.15 51.10 47.02 58.61 55.36
+# component 2
+53.606 57.70 46.56 32.73 66.99 32.54 53.60 41.48

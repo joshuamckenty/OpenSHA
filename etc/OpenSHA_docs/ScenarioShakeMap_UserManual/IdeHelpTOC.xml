@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN" "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<toc version="2.0">
+ <tocitem text="Introduction to Scenario ShakeMap Online Help" target="ApplicationIntro"/>
+ <tocitem text="Selecting Attenuation Relationship(s) and its parameters" target="ApplicationAttenuationPanel" />
+ <tocitem text="Region and Site Parameters" target="RegionPanel" />
+ <tocitem text="Defing Earthquake Rupture" target="EqkRupturePanel" expand="false">
+     <tocitem text="Selecting Eqk Rupture from ERF" target="RuptureFromERFPanel" />
+     <tocitem text="Defing custom Eqk Rupture" target="CustomRuptureCreationPanel" />
+ </tocitem>
+ <tocitem text="Setting the GMT plotting(Map) Attributes" target="MapAttributesPanel" />
+ <tocitem text="Selecting the Map type to plot(IML@Prob or Prob@IML)" target="MapTypePanel" />
+ <tocitem text="Introduction to Control Panels" target="ControlPanelsIntro" expand="false">
+   <tocitem text="Puente Hills Scenario Control Panel" target="PHS_ControlPanel" />
+   <tocitem text="Selecting the calculation mode" target="CalculationModeControlPanel" />
+   <tocitem text="Setting parameters for Scenario ShakeMap calculation" target="CalculationSettingParamsControl" />
+   <tocitem text="Generating files for Hzus" target="HazusFilesGenerationPanel" />
+   <tocitem text="Selecting region from provided list of regions" target="RegionOfInterestPanel" />
+ </tocitem>
+ <tocitem text="Javadoc - The Java API Documentation for OpenSHA" target="OpenSHA_Source_Class_Docs"/>
+
+
+</toc>

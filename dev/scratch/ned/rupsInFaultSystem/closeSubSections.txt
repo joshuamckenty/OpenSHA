@@ -1,0 +1,265 @@
+
+Landers Subsection:1  connections:
+
+	Landers Subsection:2	0.0
+	Pinto Mtn Subsection:4	4.264923
+
+Landers Subsection:2  connections:
+
+	Landers Subsection:1	0.0
+	Landers Subsection:3	0.0
+
+Landers Subsection:3  connections:
+
+	Landers Subsection:2	0.0
+	Landers Subsection:4	7.073239E-13
+	Johnson Valley (No) Subsection:1	0.4867577
+
+Landers Subsection:4  connections:
+
+	Landers Subsection:3	0.0
+	Landers Subsection:5	0.0
+
+Landers Subsection:5  connections:
+
+	Landers Subsection:4	0.0
+	Landers Subsection:6	0.0
+
+Landers Subsection:6  connections:
+
+	Landers Subsection:5	0.0
+	Landers Subsection:7	1.4146478E-12
+	So Emerson-Copper Mtn Subsection:8	0.69444364
+
+Landers Subsection:7  connections:
+
+	Landers Subsection:6	0.0
+	Landers Subsection:8	0.0
+
+Landers Subsection:8  connections:
+
+	Landers Subsection:7	0.0
+	Landers Subsection:9	1.4146478E-12
+
+Landers Subsection:9  connections:
+
+	Landers Subsection:8	0.0
+	Landers Subsection:10	7.073239E-13
+
+Landers Subsection:10  connections:
+
+	Landers Subsection:9	0.0
+	Landers Subsection:11	0.0
+
+Landers Subsection:11  connections:
+
+	Landers Subsection:10	0.0
+	Landers Subsection:12	0.0
+
+Landers Subsection:12  connections:
+
+	Landers Subsection:11	0.0
+	Landers Subsection:13	0.0
+
+Landers Subsection:13  connections:
+
+	Landers Subsection:12	0.0
+	Gravel Hills-Harper Lk Subsection:1	0.17225057
+
+Johnson Valley (No) Subsection:1  connections:
+
+	Johnson Valley (No) Subsection:2	0.0
+	Landers Subsection:3	0.0
+
+Johnson Valley (No) Subsection:2  connections:
+
+	Johnson Valley (No) Subsection:1	0.0
+	Johnson Valley (No) Subsection:3	0.0
+	So Emerson-Copper Mtn Subsection:7	9.661993
+
+Johnson Valley (No) Subsection:3  connections:
+
+	Johnson Valley (No) Subsection:2	0.0
+	Johnson Valley (No) Subsection:4	0.0
+
+Johnson Valley (No) Subsection:4  connections:
+
+	Johnson Valley (No) Subsection:3	0.0
+	Johnson Valley (No) Subsection:5	0.0
+
+Johnson Valley (No) Subsection:5  connections:
+
+	Johnson Valley (No) Subsection:4	0.0
+
+So Emerson-Copper Mtn Subsection:1  connections:
+
+	So Emerson-Copper Mtn Subsection:2	0.0
+	Pinto Mtn Subsection:7	1.4997444
+
+So Emerson-Copper Mtn Subsection:2  connections:
+
+	So Emerson-Copper Mtn Subsection:1	0.0
+	So Emerson-Copper Mtn Subsection:3	0.0
+
+So Emerson-Copper Mtn Subsection:3  connections:
+
+	So Emerson-Copper Mtn Subsection:2	0.0
+	So Emerson-Copper Mtn Subsection:4	7.073239E-13
+
+So Emerson-Copper Mtn Subsection:4  connections:
+
+	So Emerson-Copper Mtn Subsection:3	0.0
+	So Emerson-Copper Mtn Subsection:5	0.0
+
+So Emerson-Copper Mtn Subsection:5  connections:
+
+	So Emerson-Copper Mtn Subsection:4	0.0
+	So Emerson-Copper Mtn Subsection:6	0.0
+
+So Emerson-Copper Mtn Subsection:6  connections:
+
+	So Emerson-Copper Mtn Subsection:5	0.0
+	So Emerson-Copper Mtn Subsection:7	0.0
+
+So Emerson-Copper Mtn Subsection:7  connections:
+
+	So Emerson-Copper Mtn Subsection:6	0.0
+	So Emerson-Copper Mtn Subsection:8	0.0
+	Johnson Valley (No) Subsection:2	0.0
+
+So Emerson-Copper Mtn Subsection:8  connections:
+
+	So Emerson-Copper Mtn Subsection:7	0.0
+	Landers Subsection:6	0.0
+
+Gravel Hills-Harper Lk Subsection:1  connections:
+
+	Gravel Hills-Harper Lk Subsection:2	0.0
+	Landers Subsection:13	0.0
+
+Gravel Hills-Harper Lk Subsection:2  connections:
+
+	Gravel Hills-Harper Lk Subsection:1	0.0
+	Gravel Hills-Harper Lk Subsection:3	0.0
+
+Gravel Hills-Harper Lk Subsection:3  connections:
+
+	Gravel Hills-Harper Lk Subsection:2	0.0
+	Gravel Hills-Harper Lk Subsection:4	7.073239E-13
+
+Gravel Hills-Harper Lk Subsection:4  connections:
+
+	Gravel Hills-Harper Lk Subsection:3	0.0
+	Gravel Hills-Harper Lk Subsection:5	0.0
+
+Gravel Hills-Harper Lk Subsection:5  connections:
+
+	Gravel Hills-Harper Lk Subsection:4	0.0
+	Gravel Hills-Harper Lk Subsection:6	0.0
+
+Gravel Hills-Harper Lk Subsection:6  connections:
+
+	Gravel Hills-Harper Lk Subsection:5	0.0
+	Gravel Hills-Harper Lk Subsection:7	0.0
+
+Gravel Hills-Harper Lk Subsection:7  connections:
+
+	Gravel Hills-Harper Lk Subsection:6	0.0
+	Gravel Hills-Harper Lk Subsection:8	7.073239E-13
+
+Gravel Hills-Harper Lk Subsection:8  connections:
+
+	Gravel Hills-Harper Lk Subsection:7	0.0
+	Gravel Hills-Harper Lk Subsection:9	0.0
+
+Gravel Hills-Harper Lk Subsection:9  connections:
+
+	Gravel Hills-Harper Lk Subsection:8	0.0
+	Gravel Hills-Harper Lk Subsection:10	7.073239E-13
+
+Gravel Hills-Harper Lk Subsection:10  connections:
+
+	Gravel Hills-Harper Lk Subsection:9	0.0
+	Gravel Hills-Harper Lk Subsection:11	7.073239E-13
+
+Gravel Hills-Harper Lk Subsection:11  connections:
+
+	Gravel Hills-Harper Lk Subsection:10	0.0
+	Gravel Hills-Harper Lk Subsection:12	0.0
+
+Gravel Hills-Harper Lk Subsection:12  connections:
+
+	Gravel Hills-Harper Lk Subsection:11	0.0
+
+Pinto Mtn Subsection:1  connections:
+
+	Pinto Mtn Subsection:2	0.0
+
+Pinto Mtn Subsection:2  connections:
+
+	Pinto Mtn Subsection:1	0.0
+	Pinto Mtn Subsection:3	7.073239E-13
+
+Pinto Mtn Subsection:3  connections:
+
+	Pinto Mtn Subsection:2	0.0
+	Pinto Mtn Subsection:4	0.0
+
+Pinto Mtn Subsection:4  connections:
+
+	Pinto Mtn Subsection:3	0.0
+	Pinto Mtn Subsection:5	0.0
+	Landers Subsection:1	0.0
+
+Pinto Mtn Subsection:5  connections:
+
+	Pinto Mtn Subsection:4	0.0
+	Pinto Mtn Subsection:6	0.0
+
+Pinto Mtn Subsection:6  connections:
+
+	Pinto Mtn Subsection:5	0.0
+	Pinto Mtn Subsection:7	0.0
+
+Pinto Mtn Subsection:7  connections:
+
+	Pinto Mtn Subsection:6	0.0
+	Pinto Mtn Subsection:8	7.073239E-13
+	So Emerson-Copper Mtn Subsection:1	0.0
+
+Pinto Mtn Subsection:8  connections:
+
+	Pinto Mtn Subsection:7	0.0
+	Pinto Mtn Subsection:9	0.0
+
+Pinto Mtn Subsection:9  connections:
+
+	Pinto Mtn Subsection:8	0.0
+	Pinto Mtn Subsection:10	0.0
+
+Pinto Mtn Subsection:10  connections:
+
+	Pinto Mtn Subsection:9	0.0
+
+Anacapa-Dume, alt 1 Subsection:1  connections:
+
+	Anacapa-Dume, alt 1 Subsection:2	7.073239E-13
+
+Anacapa-Dume, alt 1 Subsection:2  connections:
+
+	Anacapa-Dume, alt 1 Subsection:1	0.0
+	Anacapa-Dume, alt 1 Subsection:3	0.0
+
+Anacapa-Dume, alt 1 Subsection:3  connections:
+
+	Anacapa-Dume, alt 1 Subsection:2	0.0
+	Anacapa-Dume, alt 1 Subsection:4	0.0
+
+Anacapa-Dume, alt 1 Subsection:4  connections:
+
+	Anacapa-Dume, alt 1 Subsection:3	0.0
+	Anacapa-Dume, alt 1 Subsection:5	0.0
+
+Anacapa-Dume, alt 1 Subsection:5  connections:
+
+	Anacapa-Dume, alt 1 Subsection:4	0.0

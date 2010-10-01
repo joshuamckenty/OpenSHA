@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 2.0//EN" "http://java.sun.com/products/javahelp/map_2_0.dtd">
+<map version="2.0">
+	<mapID target="ApplicationIntro" url ="http://www.opensha.org/documentation/applications/ScenarioShakeMapApp_intro.html" />
+        <mapID target="ApplicationAttenuationPanel" url ="http://www.opensha.org/documentation/applications/application_gui_beans/AttenRelGui_ShakeMapApp.html" />
+        <mapID target="RegionPanel" url ="http://www.opensha.org/documentation/applications/application_gui_beans/RegionGui_ShakeMapApp.html" />
+        <mapID target="EqkRupturePanel" url ="http://www.opensha.org/documentation/applications/application_gui_beans/EqkRuptureGui.html" />
+        <mapID target="RegionOfInterestPanel" url ="http://www.opensha.org/documentation/applications/control_panels/RegionOfIntt.html" />
+        <mapID target="HazusFilesGenerationPanel" url ="http://www.opensha.org/documentation/applications/control_panels/GenHazusShapesFilesGui.html" />
+        <mapID target="CustomRuptureCreationPanel" url ="http://www.opensha.org/documentation/applications/application_gui_beans/CustomEqkRuptureGui.html" />
+        <mapID target="ControlPanelsIntro" url ="http://www.opensha.org/documentation/applications/control_panels/controlPanels_intro.html" />
+        <mapID target="RuptureFromERFPanel" url ="http://www.opensha.org/documentation/applications/application_gui_beans/RuptureFromERF_Gui.html" />
+        <mapID target="CalculationSettingParamsControl" url ="http://www.opensha.org/documentation/applications/control_panels/CalcSettingsControlGui.html" />
+        <mapID target="MapTypePanel" url ="http://www.opensha.org/documentation/applications/application_gui_beans/mapTypeProbIML.html" />
+        <mapID target="MapAttributesPanel" url ="http://www.opensha.org/documentation/applications/application_gui_beans/MapPlotGui.html" />
+        <mapID target="CalculationModeControlPanel" url ="http://www.opensha.org/documentation/applications/control_panels/ShakeMapCalcMode.html" />
+        <mapID target="PHS_ControlPanel" url ="http://www.opensha.org/documentation/applications/control_panels/PuenteHillsScenarioCont.html" />
+        <mapID target="OpenSHA_Source_Class_Docs" url ="http://www.opensha.org/java_code/doc/index.html" />
+</map>

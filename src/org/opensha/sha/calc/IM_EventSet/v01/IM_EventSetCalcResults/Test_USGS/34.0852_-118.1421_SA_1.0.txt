@@ -1,0 +1,57 @@
+
+X-Axis: SA 1.0
+Y-Axis: Annualized Rates
+Number of Data Sets: 2
+
+
+DATASET #1
+
+Name: (manually entered XY data)
+Num Points: 19
+Info:  Averaged data for 4 attenuations:
+SadighEtAl-1997
+AS1997
+BJF-1997
+CB2003
+for IMT being SA 1.0 for Site 
+34.0852 -118.1421 with Vs30 being 760
+ERF being Frankel-2002 with rupoffset-1.0
+Background included and treated as finite.
+These are annualized rates generated using 
+OpenSHA IM_EventSetCalc application
+
+X, Y Data:
+0.0050	0.5202199
+0.0070	0.41962564
+0.0098	0.33238485
+0.0137	0.26078272
+0.0192	0.2017653
+0.0269	0.15258934
+0.0376	0.11152542
+0.0527	0.07777357
+0.0738	0.05183947
+0.103	0.033071633
+0.145	0.01968731
+0.203	0.011069487
+0.284	0.0057955384
+0.397	0.002793614
+0.556	0.0012025037
+0.778	4.471981E-4
+1.09	1.358953E-4
+1.52	3.1965392E-5
+2.13	4.0352775E-6
+
+
+
+DATASET #2
+
+Name: (manually entered XY data)
+Num Points: 2
+Info: Data from USGS website for SA 1.0 for site 
+34.0852 ,-118.1421
+
+X, Y Data:
+0.457	0.00211
+0.8226	4.04E-4
+
+

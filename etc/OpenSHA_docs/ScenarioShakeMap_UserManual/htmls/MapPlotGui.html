@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+		<meta name="generator" content="Adobe GoLive 6">
+		<title>ScenarioShakeMap - Map plotting params GUI</title>
+	</head>
+
+	<body bgcolor="#b4b4b4" leftmargin="10" marginheight="10" marginwidth="10" topmargin="10">
+		<div align="left">
+			<p><a title="OpenSHA home page" href="http://www.OpenSHA.org" target="_blank"><font face="Times New Roman,Georgia,Times"><img src="../images/openSHA_Aqua_sm.gif" alt="" width="108" height="29" border="0"></font></a></p>
+		</div>
+		<div class=Section1>
+			<h3 class=MsoNormal style="text-align:center"><span style="font-family:Arial"><b><font face="Times New Roman,Georgia,Times">Map Attributes</font></b></span></h3>
+		</div>
+					<p class=MsoNormal></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">This panel becomes visible when user clicks on the Map Attributes tab in the main application. Parameters within this panel help the user in specifying the map image setting which is produced using the GMT(Geographic Mapping toolkit) script. </font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">As shown in Fig - 1, user can set the Color Scheme for the map image. Following are the color schemes supported in our framework :</font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>MaxSpectrum :???? (Color range)</font></span></p>
+					<p class=MsoNormal style="margin-left:.75in;text-align:justify;text-indent:
+-.25in;mso-list:l0 level1 lfo2;tab-stops:list .75in"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>STEP : ???? (Color range)</font></span></p>
+					<p class=MsoNormal style="margin-left:.75in;text-align:justify;text-indent:
+-.25in;mso-list:l0 level1 lfo2;tab-stops:list .75in"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">3)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;</span>Shakemap : ???? (Color range)</font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">User can specify color scale limits either from the data itself or can set it manually by making choice from Color Scale Limits parameter. </font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">User can also specify which topographic file to use(3 sec grid spacing, 6 sec gridspacing, 18 sec grid spacing, etc). Currently we only have topographic data for California region. User can make his/her choice about the topographic file by selecting from parameter Topo Resolution (arc-sec). </font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">If user wants to plot Highways in his Scenario shakemap, he/she can make that choice from Highways in plot parameter. </font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">User can specify how coastline to be shown in the map image by selecting from parameter Coast. </font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">Image width can be specified using Image Width(inches) parameter. </font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">User can choose to add the Rupture surface in the map image by selecting from Rupture-Surface Plotting parameter. This will create a discrete boundary in the region for the earthquake rupture surface.</font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">Above specified parameter values are used in creating the GMT script that will eventually create the map image.</font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">Apart from above specified parameters user has the option of either generating the Scenario shakemap of the linear values or log values. If user chooses to generate the Log Plot then Plot Log parameter must be Checked, it will then convert convert all the data values to Natural Log values, then create the Scenario shakemap of these log values</font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">Use GMT WebService parameter should always be checked so that application can use GMT on the server, else it will try to find on the local machine where this application is running.<span style="mso-spacerun: yes">&nbsp; </span>User does not have to worry about this parameter, as long Select Map Calculation Method from Controls Panels at the bottom of the application has be set to Use Server. As long as it is selected all the computation and map generation will be performed on the server. Refer to section - ????</font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">Using this application user can generate Hazus Shape files that goes inside the Hazus software for loss estimation. If<span style="mso-spacerun: yes">&nbsp; </span>the parameter Generate Hazus Shape Files parameter is checked then application will generate Hazus shape files for the selected IMT(Intensity Measure Type). </font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times"><b>Note : </b>This application generate Hazus shapefiles which cannot be imported directed to Hazus-MH. They have to be first converted to files that Hazus-MH can accept using Arc-GIS. But shapefiles generated using this application can be imported directly to earlier version of Hazus, it is just these files have to converted to format that Hazus-MH understands. <b><span style="mso-spacerun:
+yes">&nbsp;&nbsp;</span></b></font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">If user has chosen to generate the shapefiles for Hazus then Plot Log option must be unchecked because shape files can only be generated for the linear data values. So if both Plot Log and Generate Hazus Shape Files options are checked user application will throw Error Message back to user saying that You cannot make Hazus Shapefiles with log-plot selected! .</font></span></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"></p>
+					<p class=MsoNormal style="margin-left:.5in;text-align:justify"><span style="font-family:Arial"><font face="Times New Roman,Georgia,Times">This application provides very user-friendly error messages so user understands what went wrong in the application. Even after user has provided some incorrect inputs in the application, he/she will<span style="mso-spacerun: yes">&nbsp; </span>be prompted with error message, describing the nature of the error. Once user is notified with the error, he/she can correct the input and redo the calculations. Once an error message is thrown by the application, it will remain in the same state until user fixes the error. But if application does crash due to some reason, a window (Bug Report window) will launched that will allow user to send email to the OpenSHA group describing the problem and what was user trying to do when the exception occurred.</font></span></p>
+					<p class=MsoNormal style="margin-left:.25in;text-align:justify"></p>
+					<table width="442" border="1" cellspacing="2" cellpadding="0" align="center">
+						<tr>
+							<td><img src="../images/map_attributes.jpg" alt="" height="612" width="432" border="0"></td>
+						</tr>
+						<tr>
+							<td>Fig -1: Setting the values for the parameters that are needed to create the GMT (Geographic Mapping Toolkit) script using which Scenario Shakemaps are produced.</td>
+						</tr>
+					</table>
+		<p class=MsoBodyTextIndent2></p>
+		<div align="center">
+			<div class=Section1>
+				<p class=MsoBodyText2 align=center style="text-align:center"><span style="font-family:Arial"><span style="mso-tab-count:1"></span></span></p>
+			</div>
+		</div>
+	</body>
+
+</html>

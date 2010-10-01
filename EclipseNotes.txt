@@ -1,0 +1,10 @@
+ To increase memory, here are the steps:
+
+	1. Click on "HazardCurveLocalModeApplication" and select "Run As" 
+	   and then "Run.....". A window will pop up.
+
+	2.  Select "Arguments" tab from this window.
+
+	3.  In the "VM arguments", please right "-Xmx500M".
+
+	4. Then hit the "Run" button.

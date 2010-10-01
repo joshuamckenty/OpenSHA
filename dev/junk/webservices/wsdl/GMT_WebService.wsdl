@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="GMT_WebService" targetNamespace="http://gravity.usc.edu/gmt/ws/GMT_WS" xmlns:tns="http://gravity.usc.edu/gmt/ws/GMT_WS" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://gravity.usc.edu/gmt/ws/GMT_WS" xmlns:tns="http://gravity.usc.edu/gmt/ws/GMT_WS" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://java.sun.com/jax-rpc-ri/internal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <import namespace="http://java.sun.com/jax-rpc-ri/internal"/>
+      <complexType name="ArrayOfstring">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="string[]"/></restriction></complexContent></complexType>
+      <complexType name="ArrayOfdatahandler">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="ns2:datahandler[]"/></restriction></complexContent></complexType></schema>
+    <schema targetNamespace="http://java.sun.com/jax-rpc-ri/internal" xmlns:tns="http://java.sun.com/jax-rpc-ri/internal" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <import namespace="http://gravity.usc.edu/gmt/ws/GMT_WS"/>
+      <simpleType name="datahandler">
+        <restriction base="base64Binary"/></simpleType></schema></types>
+  <message name="GMT_WebServiceAPI_runGMT_Script">
+    <part name="arrayOfString_1" type="tns:ArrayOfstring"/>
+    <part name="arrayOfDataHandler_2" type="tns:ArrayOfdatahandler"/></message>
+  <message name="GMT_WebServiceAPI_runGMT_ScriptResponse">
+    <part name="result" type="xsd:string"/></message>
+  <portType name="GMT_WebServiceAPI">
+    <operation name="runGMT_Script" parameterOrder="arrayOfString_1 arrayOfDataHandler_2">
+      <input message="tns:GMT_WebServiceAPI_runGMT_Script"/>
+      <output message="tns:GMT_WebServiceAPI_runGMT_ScriptResponse"/></operation></portType>
+  <binding name="GMT_WebServiceAPIBinding" type="tns:GMT_WebServiceAPI">
+    <operation name="runGMT_Script">
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://gravity.usc.edu/gmt/ws/GMT_WS"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://gravity.usc.edu/gmt/ws/GMT_WS"/></output>
+      <soap:operation soapAction=""/></operation>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/></binding>
+  <service name="GMT_WebService">
+    <port name="GMT_WebServiceAPIPort" binding="tns:GMT_WebServiceAPIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port></service></definitions>

@@ -1,0 +1,57 @@
+
+X-Axis: PGA
+Y-Axis: Annualized Rates
+Number of Data Sets: 2
+
+
+DATASET #1
+
+Name: (manually entered XY data)
+Num Points: 2
+Info:  Data from USGS website for PGA for site 
+34.0852 ,-118.1421
+
+X, Y Data:
+0.5736	0.00211
+1.0298	4.04E-4
+
+
+
+DATASET #2
+
+Name: (manually entered XY data)
+Num Points: 19
+Info:  Averaged data for 4 attenuations:
+SadighEtAl-1997
+AS1997
+BJF-1997
+CB2003
+for IMT being PGA for Site 
+34.0852 -118.1421 with Vs30 being 760
+ERF being Frankel-2002 with rupoffset-1.0
+Background included and treated as finite.
+These are annualized rates generated using 
+OpenSHA IM_EventSetCalc application
+
+X, Y Data:
+0.0050	0.7422996
+0.0070	0.6481571
+0.0098	0.5391654
+0.0137	0.4237161
+0.0192	0.31410187
+0.0269	0.22252478
+0.0376	0.152462
+0.0527	0.10073544
+0.0738	0.064349286
+0.103	0.039538912
+0.145	0.022836069
+0.203	0.013017404
+0.284	0.00750473
+0.397	0.004255836
+0.556	0.002187947
+0.778	9.426551E-4
+1.09	3.1423153E-4
+1.52	7.698429E-5
+2.13	1.1214918E-5
+
+

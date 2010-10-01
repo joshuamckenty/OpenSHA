@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration
+    xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+
+
+<service name="GMT_WebService" targetNamespace="http://gravity.usc.edu/gmt/ws/GMT_WS" typeNamespace="http://gravity.usc.edu/gmt/ws/GMT_WS" 
+packageName="org.scec.webservices.server"> 
+  <interface name="org.scec.webservices.GMT_WebServiceAPI"
+       servantName="org.scec.webservices.server.GMT_WebServiceServer" />
+	
+</service>  
+</configuration> 

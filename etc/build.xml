@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Exported by JBuilder on Feb 16, 2005 8:58:44 AM-->
+<!--It is RECOMMENDED that JBuilder builds and Ant builds done with
+this exported Ant file be kept separate and be written to different
+directories. For example, the JBuilder output directory might be "classes"
+and the Ant output directory might be "classes.ant".-->
+<project basedir="." default="rebuild" name="SHA.jpx">
+  <property name="jbuilder.home" value="/Developer/Applications/JBuilder-2005/JBuilder.framework"/>
+  <property name="jdk.home" value="/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Home"/>
+  <property name="dest" value="classes.ant"/>
+  <property name="Generated.Source" value="${dest}/Temporary_Files"/>
+  <property name="JUnit.home" value="${jbuilder.home}/thirdparty/junit3.8"/>
+  <property name="Unit.Test.home" value="${jbuilder.home}/lib"/>
+  <property name="Required.Libraries.home" value="lib"/>
+  <property name="Tomcat.4.1.Servlet.home" value="${jbuilder.home}/thirdparty/jakarta-tomcat-4.1.30/common/lib"/>
+  <property name="src" value="."/>
+  <property name="rmic" value="${jdk.home}/bin/rmic"/>
+  <path id="project.class.path">
+    <pathelement location="${dest}"/>
+    <pathelement location="${JUnit.home}/junit.jar"/>
+    <pathelement location="${Unit.Test.home}/unittest.jar"/>
+    <pathelement location="${Required.Libraries.home}/log4j-1.2.4.jar"/>
+    <pathelement location="${Required.Libraries.home}/commons-collections.jar"/>
+    <pathelement location="${Required.Libraries.home}/xml-apis.jar"/>
+    <pathelement location="${Required.Libraries.home}/xmlParserAPIs.jar"/>
+    <pathelement location="${Required.Libraries.home}/xsdlib.jar"/>
+    <pathelement location="${Required.Libraries.home}/jta-spec1_0_1.jar"/>
+    <pathelement location="${Required.Libraries.home}/jaxrpc-impl.jar"/>
+    <pathelement location="${Required.Libraries.home}/jaxrpc-api.jar"/>
+    <pathelement location="${Required.Libraries.home}/commons-beanutils.jar"/>
+    <pathelement location="${Required.Libraries.home}/jax-qname.jar"/>
+    <pathelement location="${Required.Libraries.home}/mail.jar"/>
+    <pathelement location="${Required.Libraries.home}/SRBDrop.jar"/>
+    <pathelement location="${Required.Libraries.home}/commons-logging.jar"/>
+    <pathelement location="${Required.Libraries.home}/jaas.jar"/>
+    <pathelement location="${Required.Libraries.home}/activation.jar"/>
+    <pathelement location="${Required.Libraries.home}/xercesSamples.jar"/>
+    <pathelement location="${Required.Libraries.home}/relaxngDatatype.jar"/>
+    <pathelement location="${Required.Libraries.home}/namespace.jar"/>
+    <pathelement location="${Required.Libraries.home}/xercesImpl.jar"/>
+    <pathelement location="${Required.Libraries.home}/saaj-impl.jar"/>
+    <pathelement location="${Required.Libraries.home}/saaj-api.jar"/>
+    <pathelement location="${Required.Libraries.home}/dom4j.jar"/>
+    <pathelement location="${Tomcat.4.1.Servlet.home}/servlet.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/charsets.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/classes.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/dt.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/jce.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/jsse.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/laf.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/sunrsasign.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/ui.jar"/>
+    <pathelement location="${jdk.home}/lib/dt.jar"/>
+    <pathelement location="${jdk.home}/lib/ext/apple_provider.jar"/>
+    <pathelement location="${jdk.home}/lib/ext/ldapsec.jar"/>
+    <pathelement location="${jdk.home}/lib/ext/localedata.jar"/>
+    <pathelement location="${jdk.home}/lib/ext/sunjce_provider.jar"/>
+    <pathelement location="${jdk.home}/lib/im/indicim.jar"/>
+    <pathelement location="${jdk.home}/lib/im/thaiim.jar"/>
+    <pathelement location="${jdk.home}/lib/jaws.jar"/>
+    <pathelement location="${jdk.home}/lib/jce.jar"/>
+    <pathelement location="${jdk.home}/lib/netscape.jar"/>
+  </path>
+  <!--Patternset to exclude files from the output directory:-->
+  <patternset id="dest.exclude">
+    <exclude name="Temporary_Files/"/>
+    <exclude name="Generated Source/"/>
+    <exclude name="package cache/"/>
+    <exclude name="dependency cache/"/>
+    <exclude name="jsp cache/"/>
+    <exclude name="cache files/"/>
+  </patternset>
+  <target depends="init" name="javacompile">
+    <javac bootclasspathref="project.class.path" debug="true" deprecation="true"
+      destdir="${dest}" nowarn="false" source="1.4" target="1.2">
+      <src path="${src}"/>
+      <src path="${Generated.Source}"/>
+    </javac>
+  </target>
+  <target name="rmi">
+    <exec dir="${src}" executable="${rmic}" failonerror="true">
+      <arg value="-classpath"/>
+      <arg value="${dest}:${JUnit.home}/junit.jar:${Unit.Test.home}/unittest.jar:${Required.Libraries.home}/log4j-1.2.4.jar:${Required.Libraries.home}/commons-collections.jar:${Required.Libraries.home}/xml-apis.jar:${Required.Libraries.home}/xmlParserAPIs.jar:${Required.Libraries.home}/xsdlib.jar:${Required.Libraries.home}/jta-spec1_0_1.jar:${Required.Libraries.home}/jaxrpc-impl.jar:${Required.Libraries.home}/jaxrpc-api.jar:${Required.Libraries.home}/commons-beanutils.jar:${Required.Libraries.home}/jax-qname.jar:${Required.Libraries.home}/mail.jar:${Required.Libraries.home}/SRBDrop.jar:${Required.Libraries.home}/commons-logging.jar:${Required.Libraries.home}/jaas.jar:${Required.Libraries.home}/activation.jar:${Required.Libraries.home}/xercesSamples.jar:${Required.Libraries.home}/relaxngDatatype.jar:${Required.Libraries.home}/namespace.jar:${Required.Libraries.home}/xercesImpl.jar:${Required.Libraries.home}/saaj-impl.jar:${Required.Libraries.home}/saaj-api.jar:${Required.Libraries.home}/dom4j.jar:${Tomcat.4.1.Servlet.home}/servlet.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/charsets.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/dt.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/jce.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/jsse.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/laf.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/sunrsasign.jar:/System/Library/Frameworks/JavaVM.framework/Versions/1.4.2/Classes/ui.jar:${jdk.home}/lib/dt.jar:${jdk.home}/lib/ext/apple_provider.jar:${jdk.home}/lib/ext/ldapsec.jar:${jdk.home}/lib/ext/localedata.jar:${jdk.home}/lib/ext/sunjce_provider.jar:${jdk.home}/lib/im/indicim.jar:${jdk.home}/lib/im/thaiim.jar:${jdk.home}/lib/jaws.jar:${jdk.home}/lib/jce.jar:${jdk.home}/lib/netscape.jar"/>
+      <arg value="-d"/>
+      <arg value="${rmi_dest}"/>
+      <arg line="-v1.2"/>
+      <arg value="org.opensha.sha.earthquake.rupForecastImpl.remote.RemoteERF_ListFactoryImpl"/>
+      <arg value="org.opensha.sha.earthquake.rupForecastImpl.remote.RemoteEqkRupForecast_Impl"/>
+      <arg value="org.opensha.sha.calc.remoteCalc.RemoteHazardCurveFactoryImpl"/>
+      <arg value="org.opensha.sha.calc.HazardCurveCalculator"/>
+      <arg value="org.opensha.sha.earthquake.rupForecastImpl.remote.RemoteERF_ListImpl"/>
+      <arg value="org.opensha.sha.calc.DisaggregationCalculator"/>
+      <arg value="org.opensha.sha.calc.remoteCalc.RemoteDisaggregationCalcFactoryImpl"/>
+      <arg value="org.opensha.sha.earthquake.rupForecastImpl.remote.RemoteERF_FactoryImpl"/>
+    </exec>
+  </target>
+
+  <target name="resource">
+    <copy todir="${dest}">
+      <fileset dir="${src}">
+        <include name="**/*.jpe"/>
+        <include name="**/*.jpeg"/>
+        <include name="**/*.rmf"/>
+        <include name="**/*.wav"/>
+        <include name="**/*.mid"/>
+        <include name="**/*.midi"/>
+        <include name="**/*.au"/>
+        <include name="**/*.gif"/>
+        <include name="**/*.png"/>
+        <include name="**/*.jpg"/>
+        <include name="**/*.aiff"/>
+        <include name="**/*.properties"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="javadoc"/>
+  <target depends="cleanup" name="clean"/>
+  <target name="precompile"/>
+  <target depends="javacompile" name="compile"/>
+  <target depends="rmi" name="postcompile"/>
+  <target depends="javadoc,resource" name="package"/>
+  <target name="deploy"/>
+  <target depends="precompile,compile,postcompile,package,deploy" name="make"/>
+  <target depends="clean,make" name="rebuild"/>
+  <target name="cleanup">
+    <delete failonerror="false" includeemptydirs="true">
+      <fileset dir="${dest}"/>
+    </delete>
+  </target>
+  <target name="init">
+    <mkdir dir="${dest}"/>
+    <mkdir dir="${Generated.Source}"/>
+  </target>
+</project>

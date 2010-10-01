@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ISO-8859-1'  ?>
+<!DOCTYPE index PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Index Version 2.0//EN" "http://java.sun.com/products/javahelp/index_2_0.dtd">
+<index version="2.0">
+   <indexitem text="Introduction to Scenario ShakeMap Online Help" target="ApplicationIntro"/>
+ <indexitem text="Selecting Attenuation Relationship(s) and its parameters" target="ApplicationAttenuationPanel" />
+ <indexitem text="Region and Site Parameters" target="RegionPanel" />
+ <indexitem text="Defing Earthquake Rupture" target="EqkRupturePanel" expand="false">
+     <indexitem text="Selecting Eqk Rupture from ERF" target="RuptureFromERFPanel" />
+     <indexitem text="Defing custom Eqk Rupture" target="CustomRuptureCreationPanel" />
+ </indexitem>
+ <indexitem text="Setting the GMT plotting(Map) Attributes" target="MapAttributesPanel" />
+ <indexitem text="Selecting the Map type to plot(IML@Prob or Prob@IML)" target="MapTypePanel" />
+ <indexitem text="Introduction to Control Panels" target="ControlPanelsIntro" expand="false">
+   <indexitem text="Puente Hills Scenario Control Panel" target="PHS_ControlPanel" />
+   <indexitem text="Selecting the calculation mode" target="CalculationModeControlPanel" />
+   <indexitem text="Setting parameters for Scenario ShakeMap calculation" target="CalculationSettingParamsControl" />
+   <indexitem text="Generating files for Hzus" target="HazusFilesGenerationPanel" />
+   <indexitem text="Selecting region from provided list of regions" target="RegionOfInterestPanel" />
+ </indexitem>
+ <indexitem text="Javadoc - The Java API Documentation for OpenSHA" target="OpenSHA_Source_Class_Docs"/>
+
+
+</index>
+

@@ -1,0 +1,174 @@
+<cruisecontrol>
+	<!-- Commonly used directories -->
+	<property name="projectdir" value="/scratch/opensha/build/trunk"/>
+	<property name="tomcatprojectdir" value="/usr/local/tomcat/default/webapps/OpenSHA_dev/WEB-INF"/>
+	<property name="testdir" value="${projectdir}/junit/logs"/>
+	<property name="logdir" value="logs/${project.name}"/>
+	<property name="ant.bin" value="/usr/local/ant/default/bin/ant"/>
+	
+	<property name="returnaddress" value="noreply@opensha.usc.edu"/>
+
+	<!-- These builds are run based on modifications to the repository -->
+	<project name="OpenSHA-continuous" buildafterfailed="false" requiremodification="true">
+	
+		<bootstrappers>
+			<currentbuildstatusbootstrapper file="${logdir}/buildstatus.txt"/>
+			<svnbootstrapper file="ant/cc-build-test.xml"
+				localWorkingCopy="${projectdir}" />
+			<svnbootstrapper file="ant/build.xml"
+				localWorkingCopy="${projectdir}" />
+			<svnbootstrapper file="ant/test.xml"
+				localWorkingCopy="${projectdir}" />
+		</bootstrappers>
+
+		<schedule interval="300">
+			<ant antscript="${ant.bin}"
+						buildfile="${projectdir}/ant/cc-build-test.xml"
+						target="svn.build.run.common.tests" />
+		</schedule>
+
+		<modificationset quietperiod="60">
+			<svn LocalWorkingCopy="${projectdir}"/>
+		</modificationset>
+
+		<log dir="${logdir}">
+			<merge dir="${testdir}" />
+		</log>
+
+		<publishers>
+			<currentbuildstatuspublisher file="${logdir}/buildstatus.txt" />
+
+			<htmlemail mailhost="localhost"
+						returnaddress="${returnaddress}"
+						reportsuccess="fixes"
+						subjectprefix="[CuiseControl]"
+						skipusers="true"
+						css="/usr/local/cruise/reporting/jsp/webcontent/css/cruisecontrol.css"
+						xsldir="/usr/local/cruise/reporting/jsp/webcontent/xsl"
+						logdir="${logdir}">
+				<always address="kmilner@usc.edu" />
+				<!--<failure address="kmilner@usc.edu" />-->
+				<always address="pmpowers@caltech.edu" />
+			</htmlemail>
+
+		</publishers>
+
+	</project>
+
+	<!-- These tests will run at set times/days, regardless of repository modifications -->
+	<project name="OpenSHA-nightly" buildafterfailed="false" requiremodification="false">
+	
+		<bootstrappers>
+			<currentbuildstatusbootstrapper file="${logdir}/buildstatus.txt"/>
+			<svnbootstrapper file="ant/cc-build.xml"
+				localWorkingCopy="${projectdir}" />
+			<svnbootstrapper file="ant/build.xml"
+				localWorkingCopy="${projectdir}" />
+			<svnbootstrapper file="ant/test.xml"
+				localWorkingCopy="${projectdir}" />
+			<svnbootstrapper file="ant/cc-build.xml"
+				localWorkingCopy="${tomcatprojectdir}" />
+			<svnbootstrapper file="ant/build.xml"
+				localWorkingCopy="${tomcatprojectdir}" />
+		</bootstrappers>
+
+		<schedule>
+			<!-- This test runs nightly, building nightly jars -->
+			<ant time="0000" antscript="${ant.bin}"
+						buildfile="${tomcatprojectdir}/ant/cc-build-test.xml"
+						target="svn.update.app.build" />
+
+			<!-- This test runs nightly, updating the coverage site with daily tests -->
+			<ant time="0145" antscript="${ant.bin}"
+						buildfile="${projectdir}/ant/cc-build-test.xml"
+						target="svn.build.run.daily.coverage" />			
+
+			<!-- This test runs every Sunday morning, updating the coverage site with all tests -->
+			<ant time="0200" day="sunday" antscript="${ant.bin}"
+						buildfile="${projectdir}/ant/cc-build-test.xml"
+						target="svn.build.run.weekly.coverage" />
+
+			<!-- This test runs every Thursday morning, updating the coverage site with all tests -->
+			<ant time="0200" day="thursday" antscript="${ant.bin}"
+						buildfile="${projectdir}/ant/cc-build-test.xml"
+						target="svn.build.run.weekly.coverage" />
+		</schedule>
+
+		<!-- we shouldn't need this since requiremodification=false, but a CC bug requires it to build -->
+		<modificationset quietperiod="60">
+			<svn LocalWorkingCopy="${projectdir}"/>
+		</modificationset>
+
+		<log dir="${logdir}">
+			<merge dir="${testdir}" />
+		</log>
+
+		<publishers>
+			<currentbuildstatuspublisher file="${logdir}/buildstatus.txt" />
+
+			<htmlemail mailhost="localhost"
+						returnaddress="${returnaddress}"
+						reportsuccess="fixes"
+						subjectprefix="[CuiseControl]"
+						skipusers="true"
+						css="/usr/local/cruise/reporting/jsp/webcontent/css/cruisecontrol.css"
+						xsldir="/usr/local/cruise/reporting/jsp/webcontent/xsl"
+						logdir="${logdir}">
+				<always address="kmilner@usc.edu" />
+				<!--<failure address="kmilner@usc.edu" />
+				<failure address="pmpowers@caltech.edu" />-->
+			</htmlemail>
+
+		</publishers>
+
+	</project>
+
+	<!-- These tests will run on a regular schedule, regardless of repository modifications -->
+	<project name="OpenSHA-operational" buildafterfailed="false" requiremodification="false">
+	
+		<bootstrappers>
+			<currentbuildstatusbootstrapper file="${logdir}/buildstatus.txt"/>
+			<svnbootstrapper file="ant/cc-build.xml"
+				localWorkingCopy="${projectdir}" />
+			<svnbootstrapper file="ant/build.xml"
+				localWorkingCopy="${projectdir}" />
+			<svnbootstrapper file="ant/test.xml"
+				localWorkingCopy="${projectdir}" />
+		</bootstrappers>
+
+		<schedule interval="3600">
+			<!-- This test runs hourly, making sure the system is operational (servlets, should check RMI) -->
+			<ant antscript="${ant.bin}"
+						buildfile="${projectdir}/ant/cc-build-test.xml"
+						target="run.operational.tests" />
+		</schedule>
+
+		<!-- we shouldn't need this since requiremodification=false, but a CC bug requires it to build -->
+		<modificationset quietperiod="60">
+			<svn LocalWorkingCopy="${projectdir}"/>
+		</modificationset>
+
+		<log dir="${logdir}">
+			<merge dir="${testdir}" />
+		</log>
+
+		<publishers>
+			<currentbuildstatuspublisher file="${logdir}/buildstatus.txt" />
+
+			<htmlemail mailhost="localhost"
+						returnaddress="${returnaddress}"
+						reportsuccess="fixes"
+						subjectprefix="[CuiseControl]"
+						skipusers="true"
+						css="/usr/local/cruise/reporting/jsp/webcontent/css/cruisecontrol.css"
+						xsldir="/usr/local/cruise/reporting/jsp/webcontent/xsl"
+						logdir="${logdir}">
+				<always address="kmilner@usc.edu" />
+				<!--<failure address="kmilner@usc.edu" />
+				<failure address="pmpowers@caltech.edu" />-->
+			</htmlemail>
+
+		</publishers>
+
+	</project>
+</cruisecontrol>

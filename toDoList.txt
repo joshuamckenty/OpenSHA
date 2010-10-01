@@ -1,0 +1,249 @@
+Ned did his best to make sure there is no overlap between this and what's in Trac.
+
+Near Term
+---------
+
+Ned needs to review Kevin's average IMR implementation, and then we need to implement a subclass of that which replicates the NSHMP 2008 calculations.
+
+Finish PEER test conversion to JUnit. (Keep test and app control panel in sync).  Peter says we need to set the failure threshold (Ned and Peter will work on finishing this).  The link for their report is here:
+
+	http://peer.berkeley.edu/publications/peer_reports/reports_2010/web_PEER_10106_THOMASetal.pdf
+
+In SECEC VDO, can edit the MagFreqDist in the Pois floating ERF.
+
+Move all GEM1 stuff to be self contained (see Ned's email on this).
+
+Finish new web-site.
+
+Ned has the following things in his "OpenSHA - To Do Now" email lists:
+
+	1) polish tools for calculating bin MFDs from an ERF (finish org.opensha.sha.earthquake.calc.ERF_Calculator)
+	2) Looks at Kevin's Basin depth data and site-type APIs
+	3) Look at Kevin's site data applets (org.opensha.data.siteType.gui.SiteDataApplet & org.opensha.data.siteType.gui.SiteDataMapApplet ); he's adding these apps to web site.
+	6) Reproduction of NSHMP08 calcs (also see my marker board)
+	7) Brendon's "Incorporation of SI and ASI predictions to trunk" emails.
+	8) Scatter plots
+	9) Simulator rupture viewing in SCEC VDO.
+	10) Nitin's work
+
+
+BROADER ISSUES:
+--------------
+
+The ability to associate sources and imrs to TectonicRegionTypes has been added to the HazardCurveCalculator.  What remains to be done is:
+
+	Add option to GUI (or wait until we have command-line versions based on XML first?)
+	Do this for stochastic event sets (from the ERf we'll need a list for each TectonicRegionType)
+	Distance filters should now be tectonic-region dependent?
+	
+	Disagg calculator needs to be update as well.
+	
+	Ned's Note - experiments show that adding a TectonicRegionType field to EqkRupture, and setting
+	this in sources and in the IMR.setEqkRupture(*) method does not increase computation
+	time or bloat memory.
+	
+	
+Website:
+	Map/UML of each calculator/application.
+	Caluclator demos/tutorials
+	Post instructions for building stand-alone GUIs on our web site?
+	On-line short course
+	
+Investigate Performance Issues:
+
+	Define speed vs accuracy tests (GEM_TestERF; PEER test case 10; GEM custom tests?)
+
+	Try possible performance enhancements
+
+		mag-distance filter
+		num IMLs in x-axis of curve
+		mag bin width
+		grid discretization
+		adaptive grid spacing (wouldn't work for event sets)
+		pointSource --> IMR calcs (wouldn't work for event sets)
+		Smart event filtering
+		Hazard map avoiding full curve calculator
+		
+Need to review the new site translator class (what Kevin put together)
+
+Clean up control panels (make subdirs, and change names that are unclear, like CalcOptionControl)
+
+Event Set Data Calculator  - more test?; gui/xml version?; versioning for reference?
+
+Clarify declarations of IntensityMeasureRelationship, IntensityMeasureRelationshipAPI, ScalarIntensityMeasureRelationship, and AttenuationRelationship, especially in calculators
+
+JUnit JUnit JUnit.
+
+Clean up as many Eclipse warnings as possible
+
+See if param API method "getType()" is needed anymore.
+
+Improvement on TreeMap?
+
+------
+
+Clean the etc dir
+
+Take "API" out of filenames
+
+Merge contents of org.nshmp (new location) into the rest of the project.  Eric says he's not using the following:
+
+	nshmp.sha.calc.remote.api.*
+	nshmp.sha.calc.remote.*
+	nshmp.sha.gui.beans.NFPA_GuiBean.java
+	nshmp.sha.nico.*
+	nshmp.sha.pager.*
+	nshmp.util.AppConfigurer.java
+
+Figure out where to put org.opensha.refFaultParamDb
+
+Clean up contents of org.opensha.sha.gui.infoTools
+
+Codebase
+	�	Revise exception handling
+	�	Use enums where applicable (e.g. fault_type and std_dev in IMR) - Peter will 
+		explain and propose something
+	�	Clear out Sys.out.println and use of C & D for naming/debugging ... use logging 
+		with warn levels.  Peter will propose something
+	�	Survey other custom editors for possible improvements (e.g. Rupture Editor)
+	�	Better integration of threading and use of wait-cursor
+	�	Persistence framework that does not require explicit read/write XML in each class
+	�	Use correct modifiers (public protected private (e.g. HazardCurveCalculator)
+
+Web
+	�	Better user/download tracking
+
+Other notes
+	�	ArbitrarilyDiscretizedFunction - can this be DiscritizedFunction with isUniform() method?
+	�	Review overlap between sha.fault and sha.surface
+	�	Review PropogationEffect
+	�	Fix ArbDiscretizedXYZ_dataSet ??
+
+
+
+
+MINOR ISSUES:
+------------
+
+Our PEER PSHA verification applications are broken (remove, or should we update with final results)?
+
+HazardSpectrumApp crashes if source and site are more than the "Max Source-Site Distance" value (try defaults with point-source ERF).
+
+Hazus PSHA dataset calculator - GUI-based app?
+
+Warning/Disclaimer message is blank if no internet access (put html in jar file).
+
+EstimateParameterEditor - problem with IntegerEstimate (won't recover if non ints included)
+
+FractileListEstimate - add this to the parameter editor
+
+Attenuation Relationship Plotter
+
+	Buttons at the bottom right disappear if window is too narrow
+
+Implement the attenuation relationship desired by UCLA.  This will require allowing an IMR to issue a supportedIMT_Change event so the applications can refresh accordingly.  This will also require an object on the server to communicate with an application if we ever distribute IMRs.
+
+Work on html-based help documentation.
+
+Revisit PEER results plotter (& data submission tool?); 
+
+Implement color schemes at (including option for the visually impaired):
+
+	http://geography.uoregon.edu/datagraphics/color_scales.htm
+
+Revise faults in GMT plotting options.
+
+add site translation for SEA_1999_AttenRel
+
+Figure out how to add the OpenSHA logo to shakeMaps.
+
+Find a database we can reference for lat/lon values of cities in California.  Add some of these to the control panel.  Nitin has one.  Make a web service?
+
+SimpleListricGriddedFaultFactory has problem - run main method to find it.  Ned will look at this.
+
+Should we create an AjustableParametersAPI for all objects that have a list of adjustable parameters?
+
+Implement getApplicableRegion() and isLocWithinApplicableRegion() methods in implemented ERFs.
+
+
+
+
+**************** LONG TERM (LOWER PRIORITY): ****************
+-------------------------------------------------------------
+
+Look into using triangular surfaces (or at least change API to accommodate these later)?
+
+Relax the single ERF instance at one time in the ERF and RupFroERF GUI beans if needed and memory is not an issue.
+
+Ned - Run a forecast with non-zero mags up to mag 10 to search for numerical breakdowns (e.g., Math.pow(-num, non-integer) ) or search for for Math.pow.
+
+EvenlyGriddedSurface: have the getAveDip() method compute the dip explicitly (in case it's a subset of a listric fault)?
+
+Allow choosing of multiple ERFs (e.g., hand built ERF_EpistemicList)
+
+DisaggregationCalculator is similar to HazardCurveCalculator; should the two be combined?
+
+Decide how to handle rake=NaN in each IMR (can rake-NaN in an EarthquakeRupture object?).
+
+Vector PSHA?
+
+
+	Problem:  if you violate a parameter constraint when hitting the add trace button
+	(rather than hitting return in the parameter editor) you need to hit add trace again
+	if you accept the value.  Nitin and Vipin say this is a problem with Java (focus at
+	time of exception throwing is lost).
+
+JFreechart problem: If the the upperBound and lowerBound of the axis are the same then JFreechart only adds a small increment to axis range, so because of this in our AttenuationRelaitonshipApp when we choose the BJF attenRel and on Y-Axis choose the Std. Dev. we get same values for all X-values. In other words, our lowerBound and upperBound are the same. JFrechart does provide a method to handle and specify minimum range between the Upperbound and LowerBound of the axis but we can't just add a number to specify the range.
+
+
+STEP Implementation (has Matt done much of this???):
+
+	CubeObsEqkRuptureGeneratior - makes ObsEqkRupture(s) from a String (of list of Strings)
+
+	ObsEqkRuptureList - w/ all the sorting, subset selection methods
+
+	ObsEqkRuptureListCalc - various general calcs with respect to an ObsEqkRuptureList
+
+	MagCompletenessCalc
+
+	GR_fitParamsCalc
+
+	OmoriLawFitParamsCalc  
+
+		(These last three should be able to take an ObsEqkRuptureList or input data 
+		 as double[] objects for maximum efficiency and flexibility)
+
+	Other classes .................. (once done tell ned and he'll update STEP doc)
+
+
+
+********* OLD STUFF (NO LONGER NEEDED?) ****************
+--------------------------------------------------------
+
+
+Access PEER NGA data file for comparisons in our apps.
+
+Look into how to save an application in its current state (and to an abitrary file name) so that a user can double click later to come back.
+
+Solve Our MetaData Issues.  We need to be able to do three things: 1) inform the user what they are looking at in a plot (this is done); 2) save the state of a stand-alone app on the user's computer so they can relaunch later and begin where they left off; and 3) save enough information to the SRB (or equivalent) so we can tell at runtime whether a calculation has already been done, or so other's browsing the SRB will see what's available. This raises issues with respect to allowed characters in a parameter name.  Why don't we reserve the following special characters for writing the string-representation of metadata (meaning these can't be used in parameter names):
+
+	=	- separate name/value pairs
+	;	- to separate parameters
+	[	- to encapsulate dependent params
+	]	- to encapsulate dependent params
+	:	- for writing out parameterList (or GuiBean) values (also "----" under these?)
+
+	Check for these in the setName() methods?
+
+	Can we avoid such special character issues using XML representation (for the case where
+	we read values back in to redo a calculation)?
+
+	With respect to GuiBeans we have discussed two approaches.  Let's take the ERF_GuiBean as
+	an example.  One mode (mentioned above) is to read back in the parameter settings (from XML),
+	set the parameter values accordingly, and then recreate the ERF.  If the ERF is very time
+	consuming to create, then the second mode would be to read back in the serialized version
+	of the object, and since all the parameter are already set, the GuiBean would not have to
+	do anything.  Note that all non primitive parameter types (e.g., MagFreqDistParam and
+	SimpleFaultParam) must contain all info needed by their respective editor to recreate the
+	object; this info is stored in their dependent parameter list.
+

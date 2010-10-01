@@ -1,0 +1,47 @@
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    Copyright 2009 OpenSHA.org in partnership with
+    the Southern California Earthquake Center (SCEC, http://www.scec.org)
+    at the University of Southern California and the UnitedStates Geological
+    Survey (USGS; http://www.usgs.gov)
+    
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    
+      http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<project basedir="." default="jar.full.dist" name="Compile">
+
+	<property name="build" value="../build" />
+	<property name="tmpdest" value="${build}" />
+	<property name="dist" value="../dist" />
+	<property name="src" value="../src/" />
+	<property name="dev" value="../dev/" />
+	<property name="lib.dir" value="../lib" />
+	
+	<target name="pre.jar" depends="">
+		<ant antfile="build.xml" target="pre.jar"/>
+	</target>
+
+	<target name="jar.classes.only" depends="pre.jar">
+		<jar destfile="${dist}/OpenSHA_classes_only.jar" basedir="${build}" />
+		<delete dir="${tmpdest}" failonerror="yes" verbose="no" />
+	</target>
+	
+	<target name="jar.full.dist" depends="pre.jar">
+		<ant antfile="build.xml" target="unjar.libs.common"/>
+		<ant antfile="build.xml" target="resource.all"/>
+		<delete dir="${tmpdest}/META-INF" failonerror="yes" verbose="no" />
+		<jar destfile="${dist}/OpenSHA_complete.jar" basedir="${build}" />
+		<!-- <delete dir="${tmpdest}" failonerror="yes" verbose="no" /> -->
+	</target>
+	
+</project>

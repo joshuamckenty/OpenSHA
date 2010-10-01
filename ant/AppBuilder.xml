@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    Copyright 2009 OpenSHA.org in partnership with
+    the Southern California Earthquake Center (SCEC, http://www.scec.org)
+    at the University of Southern California and the UnitedStates Geological
+    Survey (USGS; http://www.usgs.gov)
+    
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    
+      http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<!-- $Id: HazardCurveLocal.xml 6862 2010-07-27 23:02:54Z kmilner $ -->
+
+<project basedir="." default="build.app" name="AppBuilder">
+	<description>
+        Builds an OpenSHA application as a launchable jar...must be called by another build file with the following
+		properties set: app.short.name, app.main.class, javac.includes, javac.excludes, resource.target,
+		and optionally: rmi.target
+    </description>
+
+	<import file="include/utils.xml"/>
+	
+	<!-- global properties -->
+	<property name="build" value="../build" />
+	<property name="dist" value="../dist" />
+	<property name="src" value="../src" />
+	<property name="dev" value="../dev" />
+	<property name="lib.dir" value="../lib" />
+	<property name="unjar.target" value="unjar.libs.common" />
+
+	<path id="library.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+
+	<!-- ================================= 
+          target: build.app
+         ================================= -->
+	<target name="build.app" depends="init, compile, copy, pack" />
+
+	
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: pack
+          
+          Creates manifest and jar; cleans up build dir.                     
+         - - - - - - - - - - - - - - - - - -->
+	<target name="pack">
+		<!-- build manifest -->
+		<!-- set version number -->
+		<runtarget target="set.app.version" />
+		<property name="app.jar.name" value="${app.short.name}-${app.version}.jar" />
+		<property name="app.jar" value="${dist}/${app.jar.name}" />
+		<jar destfile="${app.jar}" 
+			 basedir="${build}">
+			<manifest>
+				<attribute name="Main-Class" 
+					       value="${app.main.class}" />
+				<attribute name="Version" value="1.0"/>
+				<attribute name="Built-By" value="${user.name}" />
+			</manifest>
+			<include name="at/**" />
+			<include name="com/**" />
+			<include name="edu/**" />
+			<include name="net/**" />
+			<include name="org/**" />
+			<include name="javax/**" />
+			<include name="scratch/**" />
+			<include name="resources/**" />
+			<include name="oracle/**" />
+			<include name="build.version" />
+			<include name="LICENSE.txt" />
+		</jar>
+		<antcall target="clean.build.dir" />
+		<ant antfile="build.xml" target="sign.jar"/>
+		<ant antfile="build.xml" target="copy.server.jar"/>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: compile                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="compile">
+		<antcall target="compile.java" />
+		<antcall target="compile.rmi" />
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: compile.java
+         - - - - - - - - - - - - - - - - - -->
+	<target name="compile.java">
+		<javac debug="true"
+				debuglevel="lines,source"
+				destdir="${build}"
+				fork="yes"
+				includes="${javac.includes}"
+				excludes="${javac.excludes}">
+			<classpath>
+				<pathelement location="${build}"/>
+				<path refid="library.classpath" />
+			</classpath>
+			<src path="${src}" />
+			<src path="${dev}" />
+		</javac>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: compile.rmi
+         - - - - - - - - - - - - - - - - - -->
+	<target name="compile.rmi" if="rmi.target">
+		<ant antfile="build.xml" target="${rmi.target}"/>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: copy                      
+          
+          Copies resources and unpacks required libs.
+         - - - - - - - - - - - - - - - - - -->
+	<target name="copy">
+		<antcall target="unjar.libs" />
+		<antcall target="copy.resources" />
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: copy.resources
+         - - - - - - - - - - - - - - - - - -->
+	<target name="copy.resources" if="resource.target">
+		<ant antfile="build.xml" target="${resource.target}"/>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: unjar.libs
+          
+          Unpack necessary libs for inclusion in app.                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="unjar.libs" if="unjar.target">
+		<ant antfile="build.xml" target="${unjar.target}"/>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: init                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="init">
+		<mkdir dir="${dist}" />
+		<mkdir dir="${build}" />
+		<!-- clean build dir if it wasn't cleaned-->
+		<antcall target="clean.build.dir" />
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: clean.build.dir                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="clean.build.dir">
+		<delete includeemptydirs="true">
+			<fileset dir="${build}" includes="**/*"/>
+		</delete>
+	</target>
+
+</project>

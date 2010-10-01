@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Exported by JBuilder on Feb 16, 2005 8:58:44 AM-->
+<!--
+  It is RECOMMENDED that JBuilder builds and Ant builds done with
+  this exported Ant file be kept separate and be written to different
+  directories. For example, the JBuilder output directory might be "classes"
+  and the Ant output directory might be "classes.ant".
+-->
+<project basedir="." default="jarfile" name="attenuationrelationshipwebbased_test">
+  <property name="jbuilder.home" value="/Developer/Applications/JBuilder-2005/JBuilder.framework"/>
+  <property name="jdk.home" value="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home"/>
+  <property name="dest" value="../classes.ant"/>
+  <property name="JUnit.home" value="${jbuilder.home}/thirdparty/junit3.8"/>
+  <property name="Unit.Test.home" value="${jbuilder.home}/lib"/>
+  <property name="Required.Libraries.home" value="../lib"/>
+  <property name="Tomcat.4.1.Servlet.home" value="${jbuilder.home}/thirdparty/jakarta-tomcat-4.1.30/common/lib"/>
+  <property name="src" value="../."/>
+  <path id="project.class.path">
+    <pathelement location="${dest}"/>
+    <pathelement location="${JUnit.home}/junit.jar"/>
+    <pathelement location="${Unit.Test.home}/unittest.jar"/>
+    <pathelement location="${Tomcat.4.1.Servlet.home}/servlet.jar"/>
+    <pathelement location="${Required.Libraries.home}/itext-1.3.jar"/>
+    <pathelement location="${Required.Libraries.home}/jpedal.jar"/>
+  	<pathelement location="${Required.Libraries.home}/jh.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Classes/charsets.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Classes/classes.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Classes/dt.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Classes/jce.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Classes/jsse.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Classes/laf.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Classes/sunrsasign.jar"/>
+    <pathelement location="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Classes/ui.jar"/>
+    <pathelement location="${jdk.home}/lib/dt.jar"/>
+    <pathelement location="${jdk.home}/lib/ext/apple_provider.jar"/>
+    <pathelement location="${jdk.home}/lib/ext/ldapsec.jar"/>
+    <pathelement location="${jdk.home}/lib/ext/localedata.jar"/>
+    <pathelement location="${jdk.home}/lib/ext/sunjce_provider.jar"/>
+    <pathelement location="${jdk.home}/lib/im/indicim.jar"/>
+    <pathelement location="${jdk.home}/lib/im/thaiim.jar"/>
+    <pathelement location="${jdk.home}/lib/jaws.jar"/>
+    <pathelement location="${jdk.home}/lib/jce.jar"/>
+    <pathelement location="${jdk.home}/lib/netscape.jar"/>
+  </path>
+  <!--Patternset to exclude files from the output directory:-->
+  <patternset id="dest.exclude">
+    <exclude name="Temporary_Files/"/>
+    <exclude name="Generated Source/"/>
+    <exclude name="package cache/"/>
+    <exclude name="dependency cache/"/>
+    <exclude name="jsp cache/"/>
+    <exclude name="cache files/"/>
+  </patternset>
+  <target name="javacompile">
+    <javac
+      bootclasspathref="project.class.path"
+      debug="true"
+      deprecation="false"
+      optimize="true"
+      destdir="${dest}"
+      nowarn="false"
+      source="1.4"
+      target="1.4"
+      failonerror="yes"
+      verbose="no"
+      classpath="${dest}">
+      <src path="${src}"/>
+      <include name="org/opensha/sha/imr/attenRelImpl/**"/>
+      <exclude name="org/opensha/sha/imr/attenRelImpl/test/**"/>
+      <include name="org/opensha/param/**"/>
+      <include name="org/jfree/resources/**"/>
+      <include name="org/jfree/chart/resources/**"/>
+      <include name="org/jfree/chart/*.java"/>
+      <include name="org/jfree/chart/plot/*.java"/>
+      <include name="com/keypoint/PngEncoder.java" />
+    </javac>
+  </target>
+  <target name="resource">
+    <copy todir="${dest}/img" overwrite="true">
+      <fileset dir="${src}/img"/>
+    </copy>
+    <copy todir="${dest}/org/jfree/chart" overwrite="true">
+      <fileset dir="${src}/org/jfree/chart">
+        <include name="**/*.properties"/>
+        <include name="**/*.png"/>
+        <include name="**/*.jpg"/>
+        <include name="**/*.jpeg"/>
+      </fileset>
+    </copy>
+    <copy todir="${dest}/org/jfree/chart/plot" overwrite="true">
+      <fileset dir="${src}/org/jfree/chart/plot">
+        <include name="**/*.properties"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="unjarfiles">
+    <unjar src="${Required.Libraries.home}/itext-1.3.jar" dest="${dest}" />
+  	<unjar src="${Required.Libraries.home}/jh.jar" dest="${dest}" />
+  </target>
+  <target depends="javacompile" name="compile"/>
+  <target depends="compile" name="make" />
+  <target depends="resource" name="package" />
+  <target depends="precompilecleanup" name="postcompile" />
+  <target name="init">
+    <mkdir dir="${dest}"/>
+  </target>
+  <target name="jarfile" depends="precompilecleanup,init,make,package,unjarfiles">
+    <jar destfile="AttenRelApp.jar" basedir="${dest}">
+					<manifest>
+						<attribute name="Main-Class" 
+							       value="org.opensha.sha.imr.attenRelImpl.gui.AttenuationRelationshipWebBasedApplet" />
+						<attribute name="Version" value="1.0"/>
+						<attribute name="Built-By" value="${user.name}" />
+					</manifest>
+      <include name="org/**"/>
+      <include name="com/lowagie/**"/>
+      <include name="com/keypoint/**"/>
+      <include name="img/**"/>
+    </jar>
+    <antcall target="postcompile" />
+  </target>
+  <target name="precompilecleanup">
+    <delete dir="${dest}" failonerror="yes" verbose="no"/>
+  </target>
+  <target name="postcompilecleanup">
+    <delete dir="${dest}" failonerror="yes" verbose="no"/>
+  </target>
+</project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Portfolio EAL Calculator" default="jar" basedir="..">
+
+	<fileset dir="${basedir}" id="libraries">
+		<include name="lib/commons-math-1.1.jar"/>
+		<include name="lib/dom4j.jar"/>
+		<include name="lib/poi-2.5.1-final-20040804.jar"/>
+		<include name="dev/scratch/ISTI/isti.util.jar"/>
+	</fileset>
+	
+	<target name="clean">
+		<delete file="${user.home}/Desktop/PortEalCalc.jar"/>
+	</target>
+	
+	<target name="jar" depends="clean">
+		<jar destfile="${user.home}/Desktop/PortEalCalc.jar" basedir="classes">
+			<include name="org/**/*"/>
+			<include name="resources/data/vulnerability_20100223_keith.txt"/>
+			<include name="resources/data/region/*"/>
+			<include name="resources/images/**/*" />
+			<zipgroupfileset refid="libraries"/>
+			<manifest>
+				<attribute name="Main-Class" value="org.opensha.sra.gui.portfolioeal.PortfolioEALCalculatorController"/>
+				<attribute name="Built-By" value="${user.name}" />
+			</manifest>
+		</jar>
+	</target>
+</project>

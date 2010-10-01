@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<webServices 
+       xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/dd" 
+       version="1.0" 
+       targetNamespaceBase="http://gravity.usc.edu/gmt/ws" 
+       typeNamespaceBase="http://gravity.usc.edu/gmt/ws" 
+       urlPatternBase="/ws"> 
+       <endpoint name="GMT_WS" 
+           displayName="GMT Web Service" 
+           description="A GMT Webservice"  
+           interface="org.scec.webservices.GMT_WebServiceAPI"   
+          implementation="org.scec.webservices.server.GMT_WebServiceServer"/>
+       <endpointMapping
+           endpointName="GMT_WS"
+           urlPattern="/ws/GMT_WS"/>
+</webServices> 
+

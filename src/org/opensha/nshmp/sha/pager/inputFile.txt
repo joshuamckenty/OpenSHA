@@ -1,0 +1,79 @@
+# This is an input file for the PagerShakeMapCalc java program
+#
+# all lines that start with "#" are ignored (can be removed); the  
+# order of the other lines is important!
+#
+# Define REGION for calculation as
+# minLat  maxLat  minLon  maxLon  delta
+33.2  35.0  -119.5  -116.18  0.016667
+#
+# Define earthquake rupture parameters as the following on the first line:
+# magnitude aveRake  aveDip aveUpperSeisDepth aveLowerSeisDepth
+# and then numTracePoints on the second line, and the lat and lon 
+# for each of those points on successive lines (each assumed to be at a depth
+# of upperSeisDepth).  The dip direction is determined according to the
+# Aki & Richards convention (http://www.opensha.org/documentation/glossary/AkiRichardsDefn.html)  
+# If numTracePoints = 1 a point source is assumed at 
+# a depth of upperSeisDepth (lowerSeisDepth is ignored).
+7.1  90  27  5 17
+#
+# Num Trace Points with Fault Trace locations
+#
+4
+33.94513797480972 -117.86791816906268
+33.94228557679422 -118.03152837066467
+33.974578589494676 -118.12532308367722
+34.07683038424702 -118.31942192299546
+#
+# Choose an ATTENUATION RELATIONSHIP from the following choices:
+# "AS_1997_AttenRel"
+# "BJF_1997_AttenRel"
+# "Campbell_1997_AttenRel"
+# "CB_2003_AttenRel"
+# "Field_2000_AttenRel"
+# "SCEMY_1997_AttenRel"
+# "SEA_1999_AttenRel"
+# "ShakeMap_2003_AttenRel"
+# "USGS_Combined_2004_AttenRel"
+# "CB_2006_AttenRel"
+# "BA_2006_AttenRel"
+# "CY_2006_AttenRel"
+# See the above named links at the following web site for details:
+# http://www.opensha.org/java_code/doc/org/scec/sha/imr/AttenuationRelationship.html for details
+AS_1997_AttenRel
+#
+# Choose an INTENSITY_MEASURE TYPE ("PGA", "PGV", "SA", and "MMI"
+# are currently supported).  If "SA" is chosen give the period as 
+# well (e.g., "SA 1.0") the code will throw and exception (show 
+# an error message" if the chosen intensity-measure type is not 
+# supported by the chosen attenuation relationship (the html
+# documentation for each above gives those that are supported)
+PGA
+#
+# Choose whether to plot LEVEL AT PROB ("0") or PROB AT LEVEL ("1")
+# The second number is the value (prob for "0" or level for "1");
+# e.g. "0  0.5" will plot the level that has an exceedance probability
+# of 0.5 (the median), and "1 1.0" will plot the probability of exceeding
+# 1 G (if the IMT is PGA or SA).  Note that "0  0.50" is the only option 
+# supported for MMI because no one has told us how to compute sigma.
+0  0.5
+#
+# POINT SOURCE CORRECTION? ("0" for no correction or "1" for
+# a median correction; no sigma correction is yet available.  
+# This assumes a straight, vertically dipping rectangular 
+# fault with any possible strike.  This is ignored if 
+# numTracePoints above is not equal to 1
+1
+# 
+# The DEFAULT SITE TYPE that will be used anywhere outside
+# of California (site-specific values converted  from the 
+# Wills et al. (2000) classification are used in California).
+DE
+#
+# Tell whether you want a SIMPLE GMT MAP generated (which will
+# pop up in a window) - "1" for yes and "0" for no
+1
+#
+# give the output-file prefix (which will have "_mean.txt"
+# appended to it
+puentHills
