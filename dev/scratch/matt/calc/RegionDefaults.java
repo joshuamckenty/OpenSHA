@@ -37,7 +37,7 @@ public class RegionDefaults {
   //input files
   public static String cubeFilePath =  TEST_Path + "/merge_NZ.nts"; //"/merge.nts", merge_synthNZ
   public static String backgroundHazardPath = TEST_Path +  "/STEP_NZHazProb.txt"; //STEP_NZHazProb.txt STEP_backGround
-  public static String BACKGROUND_RATES_FILE_NAME =  TEST_Path +  "/NZdailyRates.txt"; //AllCal96ModelDaily.txt;//"org/opensha/sha/earthquake/rupForecastImpl/step/AllCal96ModelDaily.txt";
+  public static String BACKGROUND_RATES_FILE_NAME =  TEST_Path +  "/NZdailyRates.txt"; 
   
   //output files
   public static String outputHazardPath = TEST_Path + "/STEP_Probs.txt"; 
@@ -122,7 +122,7 @@ public static  synchronized void setRegion(int regionNum){
 	if(regionNum == REGION_CF){
 		   cubeFilePath =  TEST_Path + "/merge.nts"; //"/merge.nts", merge_synthNZ
 		   backgroundHazardPath = TEST_Path +  "/STEP_backGround.txt"; //STEP_NZHazProb.txt STEP_backGround
-		   BACKGROUND_RATES_FILE_NAME =  TEST_Path +  "/AllCal96ModelDaily.txt"; //AllCal96ModelDaily.txt;//"org/opensha/sha/earthquake/rupForecastImpl/step/AllCal96ModelDaily.txt";
+		   BACKGROUND_RATES_FILE_NAME =  TEST_Path +  "/AllCal96ModelDaily.txt"; 
 	
 		   gridPrecision  = gridPrecisionCF;
 		   
@@ -132,7 +132,7 @@ public static  synchronized void setRegion(int regionNum){
 	}else if(regionNum == REGION_NZ){
 		   cubeFilePath =  TEST_Path + "/merge_NZ.nts"; //"/merge.nts", merge_synthNZ
 		   backgroundHazardPath = TEST_Path +  "/STEP_NZHazProb.txt"; //STEP_NZHazProb.txt STEP_backGround
-		   BACKGROUND_RATES_FILE_NAME =  TEST_Path +  "/NZdailyRates.txt"; //AllCal96ModelDaily.txt;//"org/opensha/sha/earthquake/rupForecastImpl/step/AllCal96ModelDaily.txt";
+		   BACKGROUND_RATES_FILE_NAME =  TEST_Path +  "/NZdailyRates.txt"; 
 		   
 		   gridPrecision  = gridPrecisionNZ;
 		   

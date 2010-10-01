@@ -59,8 +59,7 @@ import org.opensha.sha.magdist.IncrementalMagFreqDist;
   public static String  NAME = new String("STEP Alaskan Pipeline ERF");
 
   // Input file name
-  //private final static String INPUT_FILE_NAME = "/opt/install/apache-tomcat-5.5.20/webapps/OpenSHA/WEB-INF/dataFiles/PipelineGrid.txt";
-  private final static String INPUT_FILE_NAME = "org/opensha/sha/earthquake/rupForecastImpl/step/PipelineGrid.txt";
+  private final static String INPUT_FILE_NAME = "resources/data/step/PipelineGrid.txt";
 
 
   // ArrayList of input file lines

@@ -26,7 +26,6 @@ public class BackGroundRatesGrid extends GriddedHypoMagFreqDistForecast  {
 	private boolean deltaSourcesAlreadyMade = false;
 	private boolean backgroundSourcesAlreadyMade = false;
 	private boolean backgroundRatesFileAlreadyRead = false;
-	//private final static String BACKGROUND_RATES_FILE_NAME = "org/opensha/sha/earthquake/rupForecastImpl/step/AllCal96ModelDaily.txt";
 	private String bgGridFilename = RegionDefaults.BACKGROUND_RATES_FILE_NAME;
 
 	// misc values

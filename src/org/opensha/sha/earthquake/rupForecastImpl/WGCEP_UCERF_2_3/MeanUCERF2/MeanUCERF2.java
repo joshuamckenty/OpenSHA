@@ -144,8 +144,8 @@ public class MeanUCERF2 extends EqkRupForecast {
 	public boolean calcSummedMFDs = false;
 	
 	
-	private final static String A_FAULTS_POISS_FILENAME= "org/opensha/sha/earthquake/rupForecastImpl/WGCEP_UCERF_2_3/MeanUCERF2/Segmented_5km_Poiss.txt";
-	private final static String A_FAULTS_EMPIRICAL_FILENAME= "org/opensha/sha/earthquake/rupForecastImpl/WGCEP_UCERF_2_3/MeanUCERF2/Segmented_5km_Emp.txt";
+	private final static String A_FAULTS_POISS_FILENAME= "resources/data/WGCEP_UCERF_2_3/MeanUCERF2/Segmented_5km_Poiss.txt";
+	private final static String A_FAULTS_EMPIRICAL_FILENAME= "resources/data/WGCEP_UCERF_2_3/MeanUCERF2/Segmented_5km_Emp.txt";
 
 	/**
 	 *

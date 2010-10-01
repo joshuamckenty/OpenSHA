@@ -34,7 +34,7 @@ public class PolygonRatesAnalysis {
 	private EmpiricalModelDataFetcher empiricalModelFetcher = new EmpiricalModelDataFetcher();
 	private ERF2GriddedSeisRatesCalc erf2GriddedSeisRatesCalc = new ERF2GriddedSeisRatesCalc(); 
 	private final static double MIN_MAG = 5.0;
-	private final static String PATH = "org/opensha/sha/earthquake/rupForecastImpl/WGCEP_UCERF_2_Final/data/";
+	private final static String PATH = "resources/data/WGCEP_UCERF_2_Final/data/";
 	private final static String A_FAULT_FILENAME = PATH+"A_FaultsPolygonFractions.txt";
 	private final static String B_FAULT_FILENAME = PATH+"B_FaultsPolygonFractions.txt";
 	private final static String NON_CA_B_FAULT_FILENAME = PATH+"NonCA_B_FaultsPolygonFractions.txt";
@@ -176,7 +176,7 @@ public class PolygonRatesAnalysis {
 	 */
 	public void mkC_ZonesFile() {
 		NSHMP_GridSourceGenerator nshmpGridSrcGen = new NSHMP_GridSourceGenerator();
-		String PATH = "org/opensha/sha/earthquake/rupForecastImpl/WGCEP_UCERF_2_Final/griddedSeis/";
+		String PATH = "resources/data/WGCEP_UCERF_2_Final/griddedSeis/";
 		try {
 			FileWriter fw = new FileWriter(C_ZONES_FILENAME);
 			fw.write(getFileHeader());
