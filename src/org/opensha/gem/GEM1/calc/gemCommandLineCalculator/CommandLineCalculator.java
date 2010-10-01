@@ -60,11 +60,9 @@ public class CommandLineCalculator {
 	 * @throws IllegalArgumentException 
 	 */
 	public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, SecurityException, NoSuchMethodException, IllegalArgumentException, InvocationTargetException {
-		
-//		/Users/damianomonelli/Documents/Workspace/OpenSHA/src/org/opensha/gem/GEM1/data/command_line_input_files/CalculatorConfig.inp
-		
+				
 		// calculator configuration file
-		String calculatorConfigFile = "/Users/damianomonelli/Documents/Workspace/OpenSHA/src/org/opensha/gem/GEM1/data/command_line_input_files/CalculatorConfig.inp";
+		String calculatorConfigFile = "resources/data/command_line_input_files/CalculatorConfig.inp";
 	    
 	    // read configuration file
 	    CalculatorConfigData calcConfig = new CalculatorConfigData(calculatorConfigFile);

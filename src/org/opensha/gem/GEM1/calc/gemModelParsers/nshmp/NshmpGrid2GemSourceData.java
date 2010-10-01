@@ -222,7 +222,7 @@ public class NshmpGrid2GemSourceData extends GemFileParser {
 					st = new StringTokenizer(sRecord);
 					// read b file name
 					bValFileName = st.nextToken();
-					bValFileName = bValFileName.replaceFirst("../../data/", "/org/opensha/gem/GEM1/data/");
+					bValFileName = bValFileName.replaceFirst("../../data/", "resources/data/");
 					if (D) System.out.println("b value matrix: "+bValFileName);
 					// read b value matrix
 					bValMat = new ReadBinaryInputMatrix(bValFileName, bigEndian2LittleEndian);
@@ -234,7 +234,7 @@ public class NshmpGrid2GemSourceData extends GemFileParser {
 					st = new StringTokenizer(sRecord);
 					// read maximum magnitude file name
 					maxMagFileName = st.nextToken();
-					maxMagFileName = maxMagFileName.replaceFirst("../../data/", "/org/opensha/gem/GEM1/data/");
+					maxMagFileName = maxMagFileName.replaceFirst("../../data/", "resources/data/");
 					if (D) System.out.println("Maximum magnitude matrix: "+maxMagFileName);
 					// read maximum magnitude matrix
 					maxMagMat = new ReadBinaryInputMatrix(maxMagFileName, bigEndian2LittleEndian);
@@ -248,7 +248,7 @@ public class NshmpGrid2GemSourceData extends GemFileParser {
 					st = new StringTokenizer(sRecord);
 					// read maximum magnitude file name
 					weightMTaperFileName = st.nextToken();
-					weightMTaperFileName = weightMTaperFileName.replaceFirst("../../data/", "/org/opensha/gem/GEM1/data/");
+					weightMTaperFileName = weightMTaperFileName.replaceFirst("../../data/", "resources/data/");
 					if (D) System.out.println("Tapering magnitude weights matrix: "+weightMTaperFileName);
 					// read weights file
 					weightMTaperMat = new ReadBinaryInputMatrix(weightMTaperFileName, bigEndian2LittleEndian);
@@ -265,7 +265,7 @@ public class NshmpGrid2GemSourceData extends GemFileParser {
 				st = new StringTokenizer(sRecord);
 				// read a value file name
 				aValFileName = st.nextToken();
-				aValFileName = aValFileName.replaceFirst("../../data/", "/org/opensha/gem/GEM1/data/");
+				aValFileName = aValFileName.replaceFirst("../../data/", "resources/data/");
 				if (D) System.out.println("a value matrix: "+aValFileName);
 				// read a value file
 				ReadBinaryInputMatrix aValMat = new ReadBinaryInputMatrix(aValFileName, bigEndian2LittleEndian);

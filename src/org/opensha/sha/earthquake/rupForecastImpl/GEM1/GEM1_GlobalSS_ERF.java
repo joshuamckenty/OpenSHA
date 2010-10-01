@@ -13,7 +13,7 @@ public class GEM1_GlobalSS_ERF extends GEM1ERF {
 
 	public static final String NAME = "GEM1 Global Smoothed Seismicity ERF";
 
-	public static final String inputFile = "/org/opensha/gem/GEM1/data/" +
+	public static final String inputFile = "resources/data/" +
 	"global_smooth_seismicity/zechar.triple_s.global.rate_forecast.xml";
 
 	public GEM1_GlobalSS_ERF() {

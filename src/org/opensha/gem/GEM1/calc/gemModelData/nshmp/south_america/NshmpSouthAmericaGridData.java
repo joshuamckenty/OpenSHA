@@ -15,7 +15,7 @@ public class NshmpSouthAmericaGridData extends GemFileParser {
 	private final static boolean D = false;	// for debugging
 	
 	// directory for grid seismicity files
-	private String inDir = "/org/opensha/gem/GEM1/data/nshmp/south_america/grid/";
+	private String inDir = "resources/data/nshmp/south_america/grid/";
 	
 	public NshmpSouthAmericaGridData(double latmin, double latmax, double lonmin, double lonmax){
 		

@@ -28,7 +28,7 @@ public class RegionDefaults {
    */
   
   
-  public static String TEST_Path = "data/mattg_test";
+  public static String TEST_Path = "src/resources/data/mattg_test";
   
   public static int REGION_CF = 0;
   public static int REGION_NZ = 1;

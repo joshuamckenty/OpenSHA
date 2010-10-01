@@ -280,7 +280,7 @@ public class InputModelData {
 	// for testing
 	public static void main(String[] args) throws IOException{
 		
-		InputModelData data = new InputModelData("/Users/damianomonelli/Documents/workspace/OpenSHA/src/org/opensha/gem/GEM1/data/command_line_input_files/src_model1.dat",5.0,0.1);
+		InputModelData data = new InputModelData("resources/data/command_line_input_files/src_model1.dat",5.0,0.1);
 		
 	}
 

@@ -44,11 +44,11 @@ public class ForecastML2GemSourceData extends GemFileParser{
 	private static double defaultDepth = 0.0;
 	
 	// source location and Flinn-Engdhal regions for TripleS model
-	private String srcLocFile = "/org/opensha/gem/GEM1/data/global_smooth_seismicity/TripleSGlobalForecastSourceLoc.dat";
-	private String srcTectRegFile = "/org/opensha/gem/GEM1/data/global_smooth_seismicity/TripleSGlobalForecastFlinnEndghalReg.dat";
+	private String srcLocFile = "resources/data/global_smooth_seismicity/TripleSGlobalForecastSourceLoc.dat";
+	private String srcTectRegFile = "resources/data/global_smooth_seismicity/TripleSGlobalForecastFlinnEndghalReg.dat";
 	
 	// Flinn-Engdhal regions and tectonic regions
-	private String flinnEndghalRegTectReg = "/org/opensha/gem/GEM1/data/flinn_engdhal/flinn-engdhal.dat";
+	private String flinnEndghalRegTectReg = "resources/data/flinn_engdhal/flinn-engdhal.dat";
 	
 	
 	public ForecastML2GemSourceData(String inputfile) throws IOException{
