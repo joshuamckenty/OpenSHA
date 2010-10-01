@@ -3,4 +3,5 @@ build
 build/**/*
 build-stamp
 dist/**/*
-
+src/resources/data
+lib
