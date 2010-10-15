@@ -37,8 +37,8 @@ public abstract class NGATest implements ParameterChangeWarningListener {
     private final String dir;
 
     public NGATest(String dir) {
-        this.dir =
-                "java_tests" + File.separator + "data" + File.separator + dir;
+        this.dir = "test_data" + File.separator + dir;
+    	System.out.print(this.dir);
     }
 
     @Before
