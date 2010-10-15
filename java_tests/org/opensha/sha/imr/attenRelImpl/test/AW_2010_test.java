@@ -59,7 +59,7 @@ public class AW_2010_test implements ParameterChangeWarningListener {
 
     private AW_2010_AttenRel aw_2010_AttenRel = null;
 
-    private static String inputFilePath = "/java_tests/data/";
+    private static String inputFilePath = "/test_data/";
     private static String inputFileNameFinite = "AW2010FINITE.TXT";
     private static String inputFileNamePoint = "AW2010POINT.TXT";
 

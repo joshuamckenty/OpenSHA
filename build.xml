@@ -57,7 +57,16 @@
                 <filter excludes="au.com.jenisys.view.*"/>
             </instr>
         </emma>
-        <junit haltonerror="no" haltonfailure="yes" fork="yes" dir="${coverage.dir}" maxmemory="2048m">
+        <copy todir="${instrumented.dir}/classes/org/opensha/sha/imr/attenRelImpl/" overwrite="true">
+			<fileset dir="${src.dir}/org/opensha/sha/imr/attenRelImpl/">
+				<include name="**/*.txt" />
+			</fileset>
+		</copy>
+		<mkdir dir="${coverage.dir}/test_data"/>
+		<copy todir="${coverage.dir}/test_data/">
+		    <fileset dir="${data.dir}"/>
+	    </copy>
+        <junit haltonerror="no" haltonfailure="no" fork="yes" dir="${coverage.dir}" maxmemory="2048m">
             <classpath>
                 <!-- Input test files -->
                 <pathelement path="${data.dir}"/>
@@ -87,6 +96,7 @@
                 <fileset dir="${test.dir}">
                     <include name="org/opensha/**/*test.java"/>
                     <include name="org/opensha/**/*Test.java"/>
+                    <!-- <include name="org/opensha/sha/imr/attenRelImpl/test/*test.java"/> -->
                 </fileset>
             </batchtest>
         </junit>
