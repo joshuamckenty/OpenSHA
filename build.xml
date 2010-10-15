@@ -50,7 +50,7 @@
         <mkdir dir="${coverage.dir}"/>
         <mkdir dir="${tests.report.dir}"/>
         <!-- Compile test classes -->
-        <javac fork="no" debug="true" destdir="${classes.dir}" classpathref="libraries" includes="org/opensha/**/*.java" srcdir="${test.dir}"/>
+        <javac fork="no" debug="true" destdir="${classes.dir}" classpathref="libraries" includes="org/**/*.java" srcdir="${test.dir}"/>
         <emma enabled="true">
             <instr verbosity="verbose" instrpath="${classes.dir}" destdir="${instrumented.dir}" metadatafile="${coverage.dir}/metadata.emma" merge="true" mode="fullcopy">
                 <filter excludes="*Test*"/>
@@ -94,8 +94,11 @@
             <formatter type="xml"/>
             <batchtest fork="yes" todir="${tests.report.dir}">
                 <fileset dir="${test.dir}">
-                    <include name="org/opensha/**/*test.java"/>
-                    <include name="org/opensha/**/*Test.java"/>
+                    <!-- <include name="org/opensha/**/*test.java"/> -->
+                    <include name="org/opensha/**/*Suite.java"/>
+                    <include name="org/opensha/sha/calc/*Test.java"/>
+                    <include name="org/opensha/gem/*Test.java"/>
+                    <include name="org/gem/*Test.java"/>
                     <!-- <include name="org/opensha/sha/imr/attenRelImpl/test/*test.java"/> -->
                 </fileset>
             </batchtest>

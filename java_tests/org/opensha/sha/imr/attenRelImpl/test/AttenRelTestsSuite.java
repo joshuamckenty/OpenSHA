@@ -20,15 +20,16 @@ package org.opensha.sha.imr.attenRelImpl.test;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import org.opensha.sha.imr.attenRelImpl.BW_1997_AttenRelTest;
 
 ;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ Spudich_1999_test.class, Abrahamson_2000_test.class,
-        Abrahamson_Silva_1997_test.class, BJF_1997_test.class,
-        CB_2003_test.class, Campbell_1997_test.class, Field_2000_test.class,
-        AS_2008_test.class, BA_2008_test.class, CB_2008_test.class,
-        CY_2008_test.class, NGA08_Site_EqkRup_Tests.class })
+        Abrahamson_Silva_1997_test.class, AW_2010_test.class, BJF_1997_test.class,
+        BW_1997_AttenRelTest.class, CB_2003_test.class, Campbell_1997_test.class, 
+        Field_2000_test.class, AS_2008_test.class, BA_2008_test.class, 
+        CB_2008_test.class, CY_2008_test.class, NGA08_Site_EqkRup_Tests.class })
 /**
  * <p>Title: </p>
  * <p>Description: </p>
