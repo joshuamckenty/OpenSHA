@@ -43,7 +43,7 @@
         <javac fork="no" debug="true" destdir="${classes.dir}" classpathref="libraries" includes="org/**/*.java org/**/*.txt" srcdir="${src.dir}"/>
     </target>
     <target name="compile" depends="compile-sources">
-        <jar destfile="${lib.dir}/opengem-minimal.jar" basedir="${classes.dir}" includes="**/*.class **/*.txt"/>
+        <jar destfile="${lib.dir}/opensha-lite.jar" basedir="${classes.dir}" includes="**/*.class **/*.txt"/>
     </target>
     <taskdef resource="emma_ant.properties" classpathref="libraries"/>
     <target name="junit-tests-with-coverage" depends="compile-sources">
